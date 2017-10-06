@@ -1,0 +1,1083 @@
+09/29/2017 03:07:55 PM - INFO - ***Evolving 10 generations with population 20***
+09/29/2017 03:07:55 PM - INFO - ***Doing generation 1 of 10***
+09/29/2017 03:08:04 PM - INFO - number: 0
+09/29/2017 03:08:04 PM - INFO - nb_neurons: 512
+09/29/2017 03:08:04 PM - INFO - nb_layers: 5
+09/29/2017 03:08:04 PM - INFO - activation: elu
+09/29/2017 03:08:04 PM - INFO - optimizer: adamax
+09/29/2017 03:08:04 PM - INFO - batch_size: 256
+09/29/2017 03:08:04 PM - INFO - dropout: 0.2
+09/29/2017 03:33:20 PM - INFO - epochs: 83
+09/29/2017 03:33:20 PM - INFO - loss: 0.91
+09/29/2017 03:33:20 PM - INFO - --------------------
+09/29/2017 03:33:23 PM - INFO - number: 1
+09/29/2017 03:33:23 PM - INFO - nb_neurons: 1024
+09/29/2017 03:33:23 PM - INFO - nb_layers: 4
+09/29/2017 03:33:23 PM - INFO - activation: elu
+09/29/2017 03:33:23 PM - INFO - optimizer: adadelta
+09/29/2017 03:33:23 PM - INFO - batch_size: 512
+09/29/2017 03:33:23 PM - INFO - dropout: 0.2
+09/29/2017 05:32:10 PM - INFO - epochs: 180
+09/29/2017 05:32:10 PM - INFO - loss: 0.83
+09/29/2017 05:32:10 PM - INFO - --------------------
+09/29/2017 05:32:13 PM - INFO - number: 2
+09/29/2017 05:32:13 PM - INFO - nb_neurons: 768
+09/29/2017 05:32:13 PM - INFO - nb_layers: 2
+09/29/2017 05:32:13 PM - INFO - activation: relu
+09/29/2017 05:32:13 PM - INFO - optimizer: rmsprop
+09/29/2017 05:32:13 PM - INFO - batch_size: 1024
+09/29/2017 05:32:13 PM - INFO - dropout: 0.05
+09/29/2017 05:41:26 PM - INFO - epochs: 70
+09/29/2017 05:41:26 PM - INFO - loss: 0.88
+09/29/2017 05:41:26 PM - INFO - --------------------
+09/29/2017 05:41:29 PM - INFO - number: 3
+09/29/2017 05:41:29 PM - INFO - nb_neurons: 768
+09/29/2017 05:41:29 PM - INFO - nb_layers: 5
+09/29/2017 05:41:29 PM - INFO - activation: relu
+09/29/2017 05:41:29 PM - INFO - optimizer: adadelta
+09/29/2017 05:41:29 PM - INFO - batch_size: 1024
+09/29/2017 05:41:29 PM - INFO - dropout: 0.2
+09/29/2017 06:36:01 PM - INFO - epochs: 126
+09/29/2017 06:36:01 PM - INFO - loss: 0.85
+09/29/2017 06:36:01 PM - INFO - --------------------
+09/29/2017 06:36:04 PM - INFO - number: 4
+09/29/2017 06:36:04 PM - INFO - nb_neurons: 1024
+09/29/2017 06:36:04 PM - INFO - nb_layers: 5
+09/29/2017 06:36:04 PM - INFO - activation: relu
+09/29/2017 06:36:04 PM - INFO - optimizer: adamax
+09/29/2017 06:36:04 PM - INFO - batch_size: 64
+09/29/2017 06:36:04 PM - INFO - dropout: 0.15
+09/30/2017 01:14:31 AM - INFO - epochs: 102
+09/30/2017 01:14:31 AM - INFO - loss: 0.75
+09/30/2017 01:14:31 AM - INFO - --------------------
+09/30/2017 01:14:35 AM - INFO - number: 5
+09/30/2017 01:14:35 AM - INFO - nb_neurons: 512
+09/30/2017 01:14:35 AM - INFO - nb_layers: 4
+09/30/2017 01:14:35 AM - INFO - activation: elu
+09/30/2017 01:14:35 AM - INFO - optimizer: nadam
+09/30/2017 01:14:35 AM - INFO - batch_size: 1024
+09/30/2017 01:14:35 AM - INFO - dropout: 0.05
+09/30/2017 01:31:21 AM - INFO - epochs: 84
+09/30/2017 01:31:21 AM - INFO - loss: 0.77
+09/30/2017 01:31:21 AM - INFO - --------------------
+09/30/2017 01:31:25 AM - INFO - number: 6
+09/30/2017 01:31:25 AM - INFO - nb_neurons: 256
+09/30/2017 01:31:25 AM - INFO - nb_layers: 5
+09/30/2017 01:31:25 AM - INFO - activation: relu
+09/30/2017 01:31:25 AM - INFO - optimizer: adamax
+09/30/2017 01:31:25 AM - INFO - batch_size: 1024
+09/30/2017 01:31:25 AM - INFO - dropout: 0.2
+09/30/2017 01:41:12 AM - INFO - epochs: 105
+09/30/2017 01:41:12 AM - INFO - loss: 1.19
+09/30/2017 01:41:12 AM - INFO - --------------------
+09/30/2017 01:41:15 AM - INFO - number: 7
+09/30/2017 01:41:15 AM - INFO - nb_neurons: 64
+09/30/2017 01:41:15 AM - INFO - nb_layers: 1
+09/30/2017 01:41:15 AM - INFO - activation: elu
+09/30/2017 01:41:15 AM - INFO - optimizer: adagrad
+09/30/2017 01:41:15 AM - INFO - batch_size: 512
+09/30/2017 01:41:15 AM - INFO - dropout: 0.05
+09/30/2017 01:50:32 AM - INFO - epochs: 259
+09/30/2017 01:50:32 AM - INFO - loss: 1.99
+09/30/2017 01:50:32 AM - INFO - --------------------
+09/30/2017 01:50:35 AM - INFO - number: 8
+09/30/2017 01:50:35 AM - INFO - nb_neurons: 768
+09/30/2017 01:50:35 AM - INFO - nb_layers: 5
+09/30/2017 01:50:35 AM - INFO - activation: selu
+09/30/2017 01:50:35 AM - INFO - optimizer: adamax
+09/30/2017 01:50:35 AM - INFO - batch_size: 1024
+09/30/2017 01:50:35 AM - INFO - dropout: 0.1
+09/30/2017 01:57:29 AM - INFO - epochs: 13
+09/30/2017 01:57:29 AM - INFO - loss: 2.50
+09/30/2017 01:57:29 AM - INFO - --------------------
+09/30/2017 01:57:33 AM - INFO - number: 9
+09/30/2017 01:57:33 AM - INFO - nb_neurons: 768
+09/30/2017 01:57:33 AM - INFO - nb_layers: 5
+09/30/2017 01:57:33 AM - INFO - activation: selu
+09/30/2017 01:57:33 AM - INFO - optimizer: adam
+09/30/2017 01:57:33 AM - INFO - batch_size: 1024
+09/30/2017 01:57:33 AM - INFO - dropout: 0.2
+09/30/2017 02:55:38 AM - INFO - epochs: 113
+09/30/2017 02:55:38 AM - INFO - loss: 0.79
+09/30/2017 02:55:38 AM - INFO - --------------------
+09/30/2017 02:55:42 AM - INFO - number: 10
+09/30/2017 02:55:42 AM - INFO - nb_neurons: 256
+09/30/2017 02:55:42 AM - INFO - nb_layers: 4
+09/30/2017 02:55:42 AM - INFO - activation: selu
+09/30/2017 02:55:42 AM - INFO - optimizer: adam
+09/30/2017 02:55:42 AM - INFO - batch_size: 256
+09/30/2017 02:55:42 AM - INFO - dropout: 0.25
+09/30/2017 03:15:12 AM - INFO - epochs: 115
+09/30/2017 03:15:12 AM - INFO - loss: 1.25
+09/30/2017 03:15:12 AM - INFO - --------------------
+09/30/2017 03:15:16 AM - INFO - number: 11
+09/30/2017 03:15:16 AM - INFO - nb_neurons: 64
+09/30/2017 03:15:16 AM - INFO - nb_layers: 1
+09/30/2017 03:15:16 AM - INFO - activation: selu
+09/30/2017 03:15:16 AM - INFO - optimizer: adam
+09/30/2017 03:15:16 AM - INFO - batch_size: 128
+09/30/2017 03:15:16 AM - INFO - dropout: 0.05
+09/30/2017 03:24:52 AM - INFO - epochs: 91
+09/30/2017 03:24:52 AM - INFO - loss: 1.82
+09/30/2017 03:24:52 AM - INFO - --------------------
+09/30/2017 03:24:56 AM - INFO - number: 12
+09/30/2017 03:24:56 AM - INFO - nb_neurons: 1024
+09/30/2017 03:24:56 AM - INFO - nb_layers: 2
+09/30/2017 03:24:56 AM - INFO - activation: relu
+09/30/2017 03:24:56 AM - INFO - optimizer: adamax
+09/30/2017 03:24:56 AM - INFO - batch_size: 256
+09/30/2017 03:24:56 AM - INFO - dropout: 0.05
+09/30/2017 03:59:45 AM - INFO - epochs: 110
+09/30/2017 03:59:45 AM - INFO - loss: 0.76
+09/30/2017 03:59:45 AM - INFO - --------------------
+09/30/2017 03:59:49 AM - INFO - number: 13
+09/30/2017 03:59:49 AM - INFO - nb_neurons: 768
+09/30/2017 03:59:49 AM - INFO - nb_layers: 4
+09/30/2017 03:59:49 AM - INFO - activation: selu
+09/30/2017 03:59:49 AM - INFO - optimizer: adagrad
+09/30/2017 03:59:49 AM - INFO - batch_size: 128
+09/30/2017 03:59:49 AM - INFO - dropout: 0.15
+09/30/2017 08:25:31 AM - INFO - epochs: 461
+09/30/2017 08:25:31 AM - INFO - loss: 1.02
+09/30/2017 08:25:31 AM - INFO - --------------------
+09/30/2017 08:25:35 AM - INFO - number: 14
+09/30/2017 08:25:35 AM - INFO - nb_neurons: 768
+09/30/2017 08:25:35 AM - INFO - nb_layers: 6
+09/30/2017 08:25:35 AM - INFO - activation: selu
+09/30/2017 08:25:35 AM - INFO - optimizer: adadelta
+09/30/2017 08:25:35 AM - INFO - batch_size: 64
+09/30/2017 08:25:35 AM - INFO - dropout: 0.2
+09/30/2017 10:34:21 AM - INFO - epochs: 63
+09/30/2017 10:34:21 AM - INFO - loss: 1.02
+09/30/2017 10:34:21 AM - INFO - --------------------
+09/30/2017 10:34:24 AM - INFO - number: 15
+09/30/2017 10:34:24 AM - INFO - nb_neurons: 128
+09/30/2017 10:34:24 AM - INFO - nb_layers: 5
+09/30/2017 10:34:24 AM - INFO - activation: selu
+09/30/2017 10:34:24 AM - INFO - optimizer: adagrad
+09/30/2017 10:34:24 AM - INFO - batch_size: 256
+09/30/2017 10:34:24 AM - INFO - dropout: 0.25
+09/30/2017 11:08:39 AM - INFO - epochs: 261
+09/30/2017 11:08:39 AM - INFO - loss: 1.83
+09/30/2017 11:08:39 AM - INFO - --------------------
+09/30/2017 11:08:43 AM - INFO - number: 16
+09/30/2017 11:08:43 AM - INFO - nb_neurons: 768
+09/30/2017 11:08:43 AM - INFO - nb_layers: 5
+09/30/2017 11:08:43 AM - INFO - activation: selu
+09/30/2017 11:08:43 AM - INFO - optimizer: rmsprop
+09/30/2017 11:08:43 AM - INFO - batch_size: 1024
+09/30/2017 11:08:43 AM - INFO - dropout: 0.25
+09/30/2017 11:41:22 AM - INFO - epochs: 68
+09/30/2017 11:41:22 AM - INFO - loss: 1.32
+09/30/2017 11:41:22 AM - INFO - --------------------
+09/30/2017 11:41:26 AM - INFO - number: 17
+09/30/2017 11:41:26 AM - INFO - nb_neurons: 256
+09/30/2017 11:41:26 AM - INFO - nb_layers: 6
+09/30/2017 11:41:26 AM - INFO - activation: selu
+09/30/2017 11:41:26 AM - INFO - optimizer: adamax
+09/30/2017 11:41:26 AM - INFO - batch_size: 1024
+09/30/2017 11:41:26 AM - INFO - dropout: 0.2
+09/30/2017 12:02:34 PM - INFO - epochs: 142
+09/30/2017 12:02:34 PM - INFO - loss: 1.12
+09/30/2017 12:02:34 PM - INFO - --------------------
+09/30/2017 12:02:38 PM - INFO - number: 18
+09/30/2017 12:02:38 PM - INFO - nb_neurons: 64
+09/30/2017 12:02:38 PM - INFO - nb_layers: 6
+09/30/2017 12:02:38 PM - INFO - activation: selu
+09/30/2017 12:02:38 PM - INFO - optimizer: rmsprop
+09/30/2017 12:02:38 PM - INFO - batch_size: 32
+09/30/2017 12:02:38 PM - INFO - dropout: 0.05
+09/30/2017 12:23:50 PM - INFO - epochs: 38
+09/30/2017 12:23:50 PM - INFO - loss: 1.61
+09/30/2017 12:23:50 PM - INFO - --------------------
+09/30/2017 12:23:54 PM - INFO - number: 19
+09/30/2017 12:23:54 PM - INFO - nb_neurons: 128
+09/30/2017 12:23:54 PM - INFO - nb_layers: 4
+09/30/2017 12:23:54 PM - INFO - activation: elu
+09/30/2017 12:23:54 PM - INFO - optimizer: adamax
+09/30/2017 12:23:54 PM - INFO - batch_size: 32
+09/30/2017 12:23:54 PM - INFO - dropout: 0.1
+09/30/2017 12:55:54 PM - INFO - epochs: 68
+09/30/2017 12:55:54 PM - INFO - loss: 1.25
+09/30/2017 12:55:54 PM - INFO - --------------------
+09/30/2017 12:55:54 PM - INFO - Generation average: 1.22%
+09/30/2017 12:55:54 PM - INFO - Generation maximum: 2.50%
+09/30/2017 12:55:54 PM - INFO - Generation minimum: 0.75%
+09/30/2017 12:55:54 PM - INFO - --------------------------------------------------------------------------------
+09/30/2017 12:55:54 PM - INFO - ***Doing generation 2 of 10***
+09/30/2017 12:55:58 PM - INFO - nb_neurons: 512
+09/30/2017 12:55:58 PM - INFO - nb_layers: 4
+09/30/2017 12:55:58 PM - INFO - activation: elu
+09/30/2017 12:55:58 PM - INFO - optimizer: adamax
+09/30/2017 12:55:58 PM - INFO - batch_size: 1024
+09/30/2017 12:55:58 PM - INFO - dropout: 0.05
+09/30/2017 01:29:14 PM - INFO - epochs: 165
+09/30/2017 01:29:14 PM - INFO - loss: 0.73
+09/30/2017 01:29:14 PM - INFO - --------------------
+09/30/2017 01:29:17 PM - INFO - nb_neurons: 1024
+09/30/2017 01:29:17 PM - INFO - nb_layers: 2
+09/30/2017 01:29:17 PM - INFO - activation: elu
+09/30/2017 01:29:17 PM - INFO - optimizer: nadam
+09/30/2017 01:29:17 PM - INFO - batch_size: 1024
+09/30/2017 01:29:17 PM - INFO - dropout: 0.05
+09/30/2017 01:31:02 PM - INFO - epochs: 7
+09/30/2017 01:31:02 PM - INFO - loss: 2.50
+09/30/2017 01:31:02 PM - INFO - --------------------
+09/30/2017 01:31:06 PM - INFO - nb_neurons: 1024
+09/30/2017 01:31:06 PM - INFO - nb_layers: 5
+09/30/2017 01:31:06 PM - INFO - activation: relu
+09/30/2017 01:31:06 PM - INFO - optimizer: adamax
+09/30/2017 01:31:06 PM - INFO - batch_size: 64
+09/30/2017 01:31:06 PM - INFO - dropout: 0.15
+09/30/2017 05:14:51 PM - INFO - epochs: 96
+09/30/2017 05:14:51 PM - INFO - loss: 0.75
+09/30/2017 05:14:51 PM - INFO - --------------------
+09/30/2017 05:14:54 PM - INFO - nb_neurons: 1024
+09/30/2017 05:14:54 PM - INFO - nb_layers: 5
+09/30/2017 05:14:54 PM - INFO - activation: relu
+09/30/2017 05:14:54 PM - INFO - optimizer: adadelta
+09/30/2017 05:14:54 PM - INFO - batch_size: 64
+09/30/2017 05:14:54 PM - INFO - dropout: 0.2
+09/30/2017 11:20:14 PM - INFO - epochs: 90
+09/30/2017 11:20:14 PM - INFO - loss: 0.81
+09/30/2017 11:20:14 PM - INFO - --------------------
+09/30/2017 11:20:17 PM - INFO - nb_neurons: 1024
+09/30/2017 11:20:17 PM - INFO - nb_layers: 5
+09/30/2017 11:20:17 PM - INFO - activation: elu
+09/30/2017 11:20:17 PM - INFO - optimizer: adam
+09/30/2017 11:20:17 PM - INFO - batch_size: 512
+09/30/2017 11:20:17 PM - INFO - dropout: 0.2
+10/01/2017 12:38:51 AM - INFO - epochs: 87
+10/01/2017 12:38:51 AM - INFO - loss: 0.84
+10/01/2017 12:38:51 AM - INFO - --------------------
+10/01/2017 12:38:54 AM - INFO - nb_neurons: 768
+10/01/2017 12:38:54 AM - INFO - nb_layers: 5
+10/01/2017 12:38:54 AM - INFO - activation: selu
+10/01/2017 12:38:54 AM - INFO - optimizer: adadelta
+10/01/2017 12:38:54 AM - INFO - batch_size: 1024
+10/01/2017 12:38:54 AM - INFO - dropout: 0.2
+10/01/2017 03:39:33 AM - INFO - epochs: 214
+10/01/2017 03:39:33 AM - INFO - loss: 0.82
+10/01/2017 03:39:33 AM - INFO - --------------------
+10/01/2017 03:39:37 AM - INFO - nb_neurons: 512
+10/01/2017 03:39:37 AM - INFO - nb_layers: 2
+10/01/2017 03:39:37 AM - INFO - activation: elu
+10/01/2017 03:39:37 AM - INFO - optimizer: nadam
+10/01/2017 03:39:37 AM - INFO - batch_size: 1024
+10/01/2017 03:39:37 AM - INFO - dropout: 0.05
+10/01/2017 03:51:53 AM - INFO - epochs: 117
+10/01/2017 03:51:53 AM - INFO - loss: 1.07
+10/01/2017 03:51:53 AM - INFO - --------------------
+10/01/2017 03:51:56 AM - INFO - nb_neurons: 512
+10/01/2017 03:51:56 AM - INFO - nb_layers: 2
+10/01/2017 03:51:56 AM - INFO - activation: elu
+10/01/2017 03:51:56 AM - INFO - optimizer: rmsprop
+10/01/2017 03:51:56 AM - INFO - batch_size: 1024
+10/01/2017 03:51:56 AM - INFO - dropout: 0.05
+10/01/2017 04:07:17 AM - INFO - epochs: 166
+10/01/2017 04:07:17 AM - INFO - loss: 1.11
+10/01/2017 04:07:17 AM - INFO - --------------------
+10/01/2017 04:07:20 AM - INFO - nb_neurons: 1024
+10/01/2017 04:07:20 AM - INFO - nb_layers: 5
+10/01/2017 04:07:20 AM - INFO - activation: elu
+10/01/2017 04:07:20 AM - INFO - optimizer: adamax
+10/01/2017 04:07:20 AM - INFO - batch_size: 64
+10/01/2017 04:07:20 AM - INFO - dropout: 0.2
+10/01/2017 06:44:38 AM - INFO - epochs: 59
+10/01/2017 06:44:38 AM - INFO - loss: 0.95
+10/01/2017 06:44:38 AM - INFO - --------------------
+10/01/2017 06:44:41 AM - INFO - nb_neurons: 1024
+10/01/2017 06:44:41 AM - INFO - nb_layers: 5
+10/01/2017 06:44:41 AM - INFO - activation: relu
+10/01/2017 06:44:41 AM - INFO - optimizer: adamax
+10/01/2017 06:44:41 AM - INFO - batch_size: 256
+10/01/2017 06:44:41 AM - INFO - dropout: 0.15
+10/01/2017 09:36:17 AM - INFO - epochs: 152
+10/01/2017 09:36:17 AM - INFO - loss: 0.68
+10/01/2017 09:36:17 AM - INFO - --------------------
+10/01/2017 09:36:20 AM - INFO - nb_neurons: 768
+10/01/2017 09:36:20 AM - INFO - nb_layers: 2
+10/01/2017 09:36:20 AM - INFO - activation: relu
+10/01/2017 09:36:20 AM - INFO - optimizer: adam
+10/01/2017 09:36:20 AM - INFO - batch_size: 1024
+10/01/2017 09:36:20 AM - INFO - dropout: 0.2
+10/01/2017 09:59:07 AM - INFO - epochs: 148
+10/01/2017 09:59:07 AM - INFO - loss: 0.93
+10/01/2017 09:59:07 AM - INFO - --------------------
+10/01/2017 09:59:10 AM - INFO - nb_neurons: 768
+10/01/2017 09:59:10 AM - INFO - nb_layers: 2
+10/01/2017 09:59:10 AM - INFO - activation: relu
+10/01/2017 09:59:10 AM - INFO - optimizer: adam
+10/01/2017 09:59:10 AM - INFO - batch_size: 1024
+10/01/2017 09:59:10 AM - INFO - dropout: 0.05
+10/01/2017 10:20:01 AM - INFO - epochs: 134
+10/01/2017 10:20:01 AM - INFO - loss: 0.79
+10/01/2017 10:20:01 AM - INFO - --------------------
+10/01/2017 10:20:01 AM - INFO - Generation average: 0.93%
+10/01/2017 10:20:01 AM - INFO - Generation maximum: 2.50%
+10/01/2017 10:20:01 AM - INFO - Generation minimum: 0.68%
+10/01/2017 10:20:01 AM - INFO - --------------------------------------------------------------------------------
+10/01/2017 10:20:01 AM - INFO - ***Doing generation 3 of 10***
+10/01/2017 10:20:05 AM - INFO - nb_neurons: 1024
+10/01/2017 10:20:05 AM - INFO - nb_layers: 5
+10/01/2017 10:20:05 AM - INFO - activation: relu
+10/01/2017 10:20:05 AM - INFO - optimizer: adamax
+10/01/2017 10:20:05 AM - INFO - batch_size: 64
+10/01/2017 10:20:05 AM - INFO - dropout: 0.15
+10/01/2017 05:53:55 PM - INFO - epochs: 88
+10/01/2017 05:53:55 PM - INFO - loss: 0.77
+10/01/2017 05:53:55 PM - INFO - --------------------
+10/01/2017 05:53:58 PM - INFO - nb_neurons: 1024
+10/01/2017 05:53:58 PM - INFO - nb_layers: 5
+10/01/2017 05:53:58 PM - INFO - activation: relu
+10/01/2017 05:53:58 PM - INFO - optimizer: adamax
+10/01/2017 05:53:58 PM - INFO - batch_size: 64
+10/01/2017 05:53:58 PM - INFO - dropout: 0.15
+10/01/2017 10:51:13 PM - INFO - epochs: 114
+10/01/2017 10:51:13 PM - INFO - loss: 0.73
+10/01/2017 10:51:13 PM - INFO - --------------------
+10/01/2017 10:51:16 PM - INFO - nb_neurons: 1024
+10/01/2017 10:51:16 PM - INFO - nb_layers: 5
+10/01/2017 10:51:16 PM - INFO - activation: relu
+10/01/2017 10:51:16 PM - INFO - optimizer: adadelta
+10/01/2017 10:51:16 PM - INFO - batch_size: 1024
+10/01/2017 10:51:16 PM - INFO - dropout: 0.2
+10/02/2017 12:47:04 AM - INFO - epochs: 154
+10/02/2017 12:47:04 AM - INFO - loss: 0.75
+10/02/2017 12:47:04 AM - INFO - --------------------
+10/02/2017 12:47:08 AM - INFO - nb_neurons: 768
+10/02/2017 12:47:08 AM - INFO - nb_layers: 5
+10/02/2017 12:47:08 AM - INFO - activation: selu
+10/02/2017 12:47:08 AM - INFO - optimizer: adamax
+10/02/2017 12:47:08 AM - INFO - batch_size: 1024
+10/02/2017 12:47:08 AM - INFO - dropout: 0.15
+10/02/2017 01:58:10 AM - INFO - epochs: 131
+10/02/2017 01:58:10 AM - INFO - loss: 0.75
+10/02/2017 01:58:10 AM - INFO - --------------------
+10/02/2017 01:58:14 AM - INFO - nb_neurons: 768
+10/02/2017 01:58:14 AM - INFO - nb_layers: 5
+10/02/2017 01:58:14 AM - INFO - activation: relu
+10/02/2017 01:58:14 AM - INFO - optimizer: adamax
+10/02/2017 01:58:14 AM - INFO - batch_size: 1024
+10/02/2017 01:58:14 AM - INFO - dropout: 0.05
+10/02/2017 02:56:02 AM - INFO - epochs: 127
+10/02/2017 02:56:02 AM - INFO - loss: 0.65
+10/02/2017 02:56:02 AM - INFO - --------------------
+10/02/2017 02:56:06 AM - INFO - nb_neurons: 1024
+10/02/2017 02:56:06 AM - INFO - nb_layers: 5
+10/02/2017 02:56:06 AM - INFO - activation: relu
+10/02/2017 02:56:06 AM - INFO - optimizer: adam
+10/02/2017 02:56:06 AM - INFO - batch_size: 1024
+10/02/2017 02:56:06 AM - INFO - dropout: 0.2
+10/02/2017 04:02:38 AM - INFO - epochs: 92
+10/02/2017 04:02:38 AM - INFO - loss: 0.90
+10/02/2017 04:02:38 AM - INFO - --------------------
+10/02/2017 04:02:42 AM - INFO - nb_neurons: 768
+10/02/2017 04:02:42 AM - INFO - nb_layers: 2
+10/02/2017 04:02:42 AM - INFO - activation: relu
+10/02/2017 04:02:42 AM - INFO - optimizer: adamax
+10/02/2017 04:02:42 AM - INFO - batch_size: 1024
+10/02/2017 04:02:42 AM - INFO - dropout: 0.05
+10/02/2017 04:27:23 AM - INFO - epochs: 164
+10/02/2017 04:27:23 AM - INFO - loss: 0.75
+10/02/2017 04:27:23 AM - INFO - --------------------
+10/02/2017 04:27:27 AM - INFO - nb_neurons: 512
+10/02/2017 04:27:27 AM - INFO - nb_layers: 2
+10/02/2017 04:27:27 AM - INFO - activation: relu
+10/02/2017 04:27:27 AM - INFO - optimizer: adamax
+10/02/2017 04:27:27 AM - INFO - batch_size: 1024
+10/02/2017 04:27:27 AM - INFO - dropout: 0.05
+10/02/2017 04:43:19 AM - INFO - epochs: 166
+10/02/2017 04:43:19 AM - INFO - loss: 0.82
+10/02/2017 04:43:19 AM - INFO - --------------------
+10/02/2017 04:43:22 AM - INFO - nb_neurons: 512
+10/02/2017 04:43:22 AM - INFO - nb_layers: 4
+10/02/2017 04:43:22 AM - INFO - activation: relu
+10/02/2017 04:43:22 AM - INFO - optimizer: adam
+10/02/2017 04:43:22 AM - INFO - batch_size: 1024
+10/02/2017 04:43:22 AM - INFO - dropout: 0.05
+10/02/2017 05:05:20 AM - INFO - epochs: 105
+10/02/2017 05:05:20 AM - INFO - loss: 0.72
+10/02/2017 05:05:20 AM - INFO - --------------------
+10/02/2017 05:05:24 AM - INFO - nb_neurons: 512
+10/02/2017 05:05:24 AM - INFO - nb_layers: 4
+10/02/2017 05:05:24 AM - INFO - activation: elu
+10/02/2017 05:05:24 AM - INFO - optimizer: adam
+10/02/2017 05:05:24 AM - INFO - batch_size: 1024
+10/02/2017 05:05:24 AM - INFO - dropout: 0.05
+10/02/2017 05:42:45 AM - INFO - epochs: 174
+10/02/2017 05:42:45 AM - INFO - loss: 0.72
+10/02/2017 05:42:45 AM - INFO - --------------------
+10/02/2017 05:42:45 AM - INFO - Generation average: 0.76%
+10/02/2017 05:42:45 AM - INFO - Generation maximum: 0.90%
+10/02/2017 05:42:45 AM - INFO - Generation minimum: 0.65%
+10/02/2017 05:42:45 AM - INFO - --------------------------------------------------------------------------------
+10/02/2017 05:42:45 AM - INFO - ***Doing generation 4 of 10***
+10/02/2017 05:42:49 AM - INFO - nb_neurons: 1024
+10/02/2017 05:42:49 AM - INFO - nb_layers: 5
+10/02/2017 05:42:49 AM - INFO - activation: relu
+10/02/2017 05:42:49 AM - INFO - optimizer: adadelta
+10/02/2017 05:42:49 AM - INFO - batch_size: 64
+10/02/2017 05:42:49 AM - INFO - dropout: 0.2
+10/02/2017 01:10:16 PM - INFO - epochs: 135
+10/02/2017 01:10:16 PM - INFO - loss: 0.74
+10/02/2017 01:10:16 PM - INFO - --------------------
+10/02/2017 01:10:20 PM - INFO - nb_neurons: 1024
+10/02/2017 01:10:20 PM - INFO - nb_layers: 5
+10/02/2017 01:10:20 PM - INFO - activation: relu
+10/02/2017 01:10:20 PM - INFO - optimizer: adamax
+10/02/2017 01:10:20 PM - INFO - batch_size: 64
+10/02/2017 01:10:20 PM - INFO - dropout: 0.2
+10/02/2017 08:39:35 PM - INFO - epochs: 152
+10/02/2017 08:39:35 PM - INFO - loss: 0.75
+10/02/2017 08:39:35 PM - INFO - --------------------
+10/02/2017 08:39:39 PM - INFO - nb_neurons: 1024
+10/02/2017 08:39:39 PM - INFO - nb_layers: 4
+10/02/2017 08:39:39 PM - INFO - activation: relu
+10/02/2017 08:39:39 PM - INFO - optimizer: adadelta
+10/02/2017 08:39:39 PM - INFO - batch_size: 1024
+10/02/2017 08:39:39 PM - INFO - dropout: 0.05
+10/02/2017 09:45:39 PM - INFO - epochs: 108
+10/02/2017 09:45:39 PM - INFO - loss: 0.70
+10/02/2017 09:45:39 PM - INFO - --------------------
+10/02/2017 09:45:43 PM - INFO - nb_neurons: 1024
+10/02/2017 09:45:43 PM - INFO - nb_layers: 5
+10/02/2017 09:45:43 PM - INFO - activation: relu
+10/02/2017 09:45:43 PM - INFO - optimizer: adam
+10/02/2017 09:45:43 PM - INFO - batch_size: 1024
+10/02/2017 09:45:43 PM - INFO - dropout: 0.05
+10/02/2017 10:57:47 PM - INFO - epochs: 99
+10/02/2017 10:57:47 PM - INFO - loss: 0.70
+10/02/2017 10:57:47 PM - INFO - --------------------
+10/02/2017 10:57:50 PM - INFO - nb_neurons: 1024
+10/02/2017 10:57:50 PM - INFO - nb_layers: 5
+10/02/2017 10:57:50 PM - INFO - activation: relu
+10/02/2017 10:57:50 PM - INFO - optimizer: adam
+10/02/2017 10:57:50 PM - INFO - batch_size: 1024
+10/02/2017 10:57:50 PM - INFO - dropout: 0.15
+10/03/2017 12:08:12 AM - INFO - epochs: 96
+10/03/2017 12:08:12 AM - INFO - loss: 0.84
+10/03/2017 12:08:12 AM - INFO - --------------------
+10/03/2017 12:08:16 AM - INFO - nb_neurons: 512
+10/03/2017 12:08:16 AM - INFO - nb_layers: 5
+10/03/2017 12:08:16 AM - INFO - activation: elu
+10/03/2017 12:08:16 AM - INFO - optimizer: adam
+10/03/2017 12:08:16 AM - INFO - batch_size: 1024
+10/03/2017 12:08:16 AM - INFO - dropout: 0.05
+10/03/2017 12:48:24 AM - INFO - epochs: 143
+10/03/2017 12:48:24 AM - INFO - loss: 0.69
+10/03/2017 12:48:24 AM - INFO - --------------------
+10/03/2017 12:48:28 AM - INFO - nb_neurons: 512
+10/03/2017 12:48:28 AM - INFO - nb_layers: 4
+10/03/2017 12:48:28 AM - INFO - activation: relu
+10/03/2017 12:48:28 AM - INFO - optimizer: adam
+10/03/2017 12:48:28 AM - INFO - batch_size: 1024
+10/03/2017 12:48:28 AM - INFO - dropout: 0.05
+10/03/2017 01:11:47 AM - INFO - epochs: 108
+10/03/2017 01:11:47 AM - INFO - loss: 0.72
+10/03/2017 01:11:47 AM - INFO - --------------------
+10/03/2017 01:11:51 AM - INFO - nb_neurons: 512
+10/03/2017 01:11:51 AM - INFO - nb_layers: 4
+10/03/2017 01:11:51 AM - INFO - activation: elu
+10/03/2017 01:11:51 AM - INFO - optimizer: adam
+10/03/2017 01:11:51 AM - INFO - batch_size: 1024
+10/03/2017 01:11:51 AM - INFO - dropout: 0.05
+10/03/2017 01:42:53 AM - INFO - epochs: 139
+10/03/2017 01:42:53 AM - INFO - loss: 0.73
+10/03/2017 01:42:53 AM - INFO - --------------------
+10/03/2017 01:42:57 AM - INFO - nb_neurons: 1024
+10/03/2017 01:42:57 AM - INFO - nb_layers: 5
+10/03/2017 01:42:57 AM - INFO - activation: selu
+10/03/2017 01:42:57 AM - INFO - optimizer: adadelta
+10/03/2017 01:42:57 AM - INFO - batch_size: 1024
+10/03/2017 01:42:57 AM - INFO - dropout: 0.2
+10/03/2017 03:54:23 AM - INFO - epochs: 148
+10/03/2017 03:54:23 AM - INFO - loss: 0.86
+10/03/2017 03:54:23 AM - INFO - --------------------
+10/03/2017 03:54:26 AM - INFO - nb_neurons: 1024
+10/03/2017 03:54:26 AM - INFO - nb_layers: 5
+10/03/2017 03:54:26 AM - INFO - activation: relu
+10/03/2017 03:54:26 AM - INFO - optimizer: adadelta
+10/03/2017 03:54:26 AM - INFO - batch_size: 1024
+10/03/2017 03:54:26 AM - INFO - dropout: 0.2
+10/03/2017 05:12:43 AM - INFO - epochs: 102
+10/03/2017 05:12:43 AM - INFO - loss: 0.83
+10/03/2017 05:12:43 AM - INFO - --------------------
+10/03/2017 05:12:46 AM - INFO - nb_neurons: 512
+10/03/2017 05:12:46 AM - INFO - nb_layers: 4
+10/03/2017 05:12:46 AM - INFO - activation: relu
+10/03/2017 05:12:46 AM - INFO - optimizer: adam
+10/03/2017 05:12:46 AM - INFO - batch_size: 1024
+10/03/2017 05:12:46 AM - INFO - dropout: 0.15
+10/03/2017 05:40:33 AM - INFO - epochs: 128
+10/03/2017 05:40:33 AM - INFO - loss: 0.85
+10/03/2017 05:40:33 AM - INFO - --------------------
+10/03/2017 05:40:33 AM - INFO - Generation average: 0.75%
+10/03/2017 05:40:33 AM - INFO - Generation maximum: 0.86%
+10/03/2017 05:40:33 AM - INFO - Generation minimum: 0.65%
+10/03/2017 05:40:33 AM - INFO - --------------------------------------------------------------------------------
+10/03/2017 05:40:33 AM - INFO - ***Doing generation 5 of 10***
+10/03/2017 05:40:37 AM - INFO - nb_neurons: 512
+10/03/2017 05:40:37 AM - INFO - nb_layers: 4
+10/03/2017 05:40:37 AM - INFO - activation: elu
+10/03/2017 05:40:37 AM - INFO - optimizer: adam
+10/03/2017 05:40:37 AM - INFO - batch_size: 1024
+10/03/2017 05:40:37 AM - INFO - dropout: 0.05
+10/03/2017 06:06:19 AM - INFO - epochs: 119
+10/03/2017 06:06:19 AM - INFO - loss: 0.76
+10/03/2017 06:06:19 AM - INFO - --------------------
+10/03/2017 06:06:23 AM - INFO - nb_neurons: 512
+10/03/2017 06:06:23 AM - INFO - nb_layers: 5
+10/03/2017 06:06:23 AM - INFO - activation: elu
+10/03/2017 06:06:23 AM - INFO - optimizer: adam
+10/03/2017 06:06:23 AM - INFO - batch_size: 1024
+10/03/2017 06:06:23 AM - INFO - dropout: 0.05
+10/03/2017 06:37:26 AM - INFO - epochs: 112
+10/03/2017 06:37:26 AM - INFO - loss: 0.73
+10/03/2017 06:37:26 AM - INFO - --------------------
+10/03/2017 06:37:29 AM - INFO - nb_neurons: 1024
+10/03/2017 06:37:29 AM - INFO - nb_layers: 5
+10/03/2017 06:37:29 AM - INFO - activation: relu
+10/03/2017 06:37:29 AM - INFO - optimizer: adadelta
+10/03/2017 06:37:29 AM - INFO - batch_size: 1024
+10/03/2017 06:37:29 AM - INFO - dropout: 0.05
+10/03/2017 07:47:34 AM - INFO - epochs: 93
+10/03/2017 07:47:34 AM - INFO - loss: 0.70
+10/03/2017 07:47:34 AM - INFO - --------------------
+10/03/2017 07:47:38 AM - INFO - nb_neurons: 768
+10/03/2017 07:47:38 AM - INFO - nb_layers: 4
+10/03/2017 07:47:38 AM - INFO - activation: relu
+10/03/2017 07:47:38 AM - INFO - optimizer: adadelta
+10/03/2017 07:47:38 AM - INFO - batch_size: 1024
+10/03/2017 07:47:38 AM - INFO - dropout: 0.05
+10/03/2017 08:51:27 AM - INFO - epochs: 171
+10/03/2017 08:51:27 AM - INFO - loss: 0.66
+10/03/2017 08:51:27 AM - INFO - --------------------
+10/03/2017 08:51:31 AM - INFO - nb_neurons: 512
+10/03/2017 08:51:31 AM - INFO - nb_layers: 5
+10/03/2017 08:51:31 AM - INFO - activation: relu
+10/03/2017 08:51:31 AM - INFO - optimizer: adam
+10/03/2017 08:51:31 AM - INFO - batch_size: 256
+10/03/2017 08:51:31 AM - INFO - dropout: 0.15
+10/03/2017 09:35:53 AM - INFO - epochs: 90
+10/03/2017 09:35:53 AM - INFO - loss: 1.04
+10/03/2017 09:35:53 AM - INFO - --------------------
+10/03/2017 09:35:57 AM - INFO - nb_neurons: 512
+10/03/2017 09:35:57 AM - INFO - nb_layers: 5
+10/03/2017 09:35:57 AM - INFO - activation: relu
+10/03/2017 09:35:57 AM - INFO - optimizer: adamax
+10/03/2017 09:35:57 AM - INFO - batch_size: 256
+10/03/2017 09:35:57 AM - INFO - dropout: 0.05
+10/03/2017 10:45:18 AM - INFO - epochs: 142
+10/03/2017 10:45:18 AM - INFO - loss: 0.66
+10/03/2017 10:45:18 AM - INFO - --------------------
+10/03/2017 10:45:22 AM - INFO - nb_neurons: 512
+10/03/2017 10:45:22 AM - INFO - nb_layers: 5
+10/03/2017 10:45:22 AM - INFO - activation: relu
+10/03/2017 10:45:22 AM - INFO - optimizer: adadelta
+10/03/2017 10:45:22 AM - INFO - batch_size: 1024
+10/03/2017 10:45:22 AM - INFO - dropout: 0.15
+10/03/2017 11:15:58 AM - INFO - epochs: 109
+10/03/2017 11:15:58 AM - INFO - loss: 0.88
+10/03/2017 11:15:58 AM - INFO - --------------------
+10/03/2017 11:16:02 AM - INFO - nb_neurons: 768
+10/03/2017 11:16:02 AM - INFO - nb_layers: 5
+10/03/2017 11:16:02 AM - INFO - activation: relu
+10/03/2017 11:16:02 AM - INFO - optimizer: adamax
+10/03/2017 11:16:02 AM - INFO - batch_size: 1024
+10/03/2017 11:16:02 AM - INFO - dropout: 0.15
+10/03/2017 12:09:59 PM - INFO - epochs: 116
+10/03/2017 12:09:59 PM - INFO - loss: 0.78
+10/03/2017 12:09:59 PM - INFO - --------------------
+10/03/2017 12:10:03 PM - INFO - nb_neurons: 1024
+10/03/2017 12:10:03 PM - INFO - nb_layers: 4
+10/03/2017 12:10:03 PM - INFO - activation: relu
+10/03/2017 12:10:03 PM - INFO - optimizer: adam
+10/03/2017 12:10:03 PM - INFO - batch_size: 1024
+10/03/2017 12:10:03 PM - INFO - dropout: 0.05
+10/03/2017 01:17:03 PM - INFO - epochs: 117
+10/03/2017 01:17:03 PM - INFO - loss: 0.68
+10/03/2017 01:17:03 PM - INFO - --------------------
+10/03/2017 01:17:07 PM - INFO - nb_neurons: 512
+10/03/2017 01:17:07 PM - INFO - nb_layers: 4
+10/03/2017 01:17:07 PM - INFO - activation: relu
+10/03/2017 01:17:07 PM - INFO - optimizer: adadelta
+10/03/2017 01:17:07 PM - INFO - batch_size: 1024
+10/03/2017 01:17:07 PM - INFO - dropout: 0.05
+10/03/2017 01:48:43 PM - INFO - epochs: 140
+10/03/2017 01:48:43 PM - INFO - loss: 0.72
+10/03/2017 01:48:43 PM - INFO - --------------------
+10/03/2017 01:48:47 PM - INFO - nb_neurons: 512
+10/03/2017 01:48:47 PM - INFO - nb_layers: 4
+10/03/2017 01:48:47 PM - INFO - activation: relu
+10/03/2017 01:48:47 PM - INFO - optimizer: adam
+10/03/2017 01:48:47 PM - INFO - batch_size: 1024
+10/03/2017 01:48:47 PM - INFO - dropout: 0.05
+10/03/2017 02:03:12 PM - INFO - epochs: 65
+10/03/2017 02:03:12 PM - INFO - loss: 0.80
+10/03/2017 02:03:12 PM - INFO - --------------------
+10/03/2017 02:03:15 PM - INFO - nb_neurons: 512
+10/03/2017 02:03:15 PM - INFO - nb_layers: 4
+10/03/2017 02:03:15 PM - INFO - activation: relu
+10/03/2017 02:03:15 PM - INFO - optimizer: adam
+10/03/2017 02:03:15 PM - INFO - batch_size: 1024
+10/03/2017 02:03:15 PM - INFO - dropout: 0.05
+10/03/2017 02:35:46 PM - INFO - epochs: 147
+10/03/2017 02:35:46 PM - INFO - loss: 0.70
+10/03/2017 02:35:46 PM - INFO - --------------------
+10/03/2017 02:35:46 PM - INFO - Generation average: 0.73%
+10/03/2017 02:35:46 PM - INFO - Generation maximum: 1.04%
+10/03/2017 02:35:46 PM - INFO - Generation minimum: 0.65%
+10/03/2017 02:35:46 PM - INFO - --------------------------------------------------------------------------------
+10/03/2017 02:35:46 PM - INFO - ***Doing generation 6 of 10***
+10/03/2017 02:35:50 PM - INFO - nb_neurons: 512
+10/03/2017 02:35:50 PM - INFO - nb_layers: 5
+10/03/2017 02:35:50 PM - INFO - activation: relu
+10/03/2017 02:35:50 PM - INFO - optimizer: adam
+10/03/2017 02:35:50 PM - INFO - batch_size: 256
+10/03/2017 02:35:50 PM - INFO - dropout: 0.05
+10/03/2017 03:43:01 PM - INFO - epochs: 134
+10/03/2017 03:43:01 PM - INFO - loss: 0.77
+10/03/2017 03:43:01 PM - INFO - --------------------
+10/03/2017 03:43:04 PM - INFO - nb_neurons: 512
+10/03/2017 03:43:04 PM - INFO - nb_layers: 5
+10/03/2017 03:43:04 PM - INFO - activation: elu
+10/03/2017 03:43:04 PM - INFO - optimizer: adam
+10/03/2017 03:43:04 PM - INFO - batch_size: 256
+10/03/2017 03:43:04 PM - INFO - dropout: 0.05
+10/03/2017 04:24:42 PM - INFO - epochs: 82
+10/03/2017 04:24:42 PM - INFO - loss: 0.75
+10/03/2017 04:24:42 PM - INFO - --------------------
+10/03/2017 04:24:46 PM - INFO - nb_neurons: 1024
+10/03/2017 04:24:46 PM - INFO - nb_layers: 4
+10/03/2017 04:24:46 PM - INFO - activation: relu
+10/03/2017 04:24:46 PM - INFO - optimizer: adadelta
+10/03/2017 04:24:46 PM - INFO - batch_size: 1024
+10/03/2017 04:24:46 PM - INFO - dropout: 0.05
+10/03/2017 05:18:53 PM - INFO - epochs: 88
+10/03/2017 05:18:53 PM - INFO - loss: 0.71
+10/03/2017 05:18:53 PM - INFO - --------------------
+10/03/2017 05:18:57 PM - INFO - nb_neurons: 768
+10/03/2017 05:18:57 PM - INFO - nb_layers: 4
+10/03/2017 05:18:57 PM - INFO - activation: relu
+10/03/2017 05:18:57 PM - INFO - optimizer: adam
+10/03/2017 05:18:57 PM - INFO - batch_size: 1024
+10/03/2017 05:18:57 PM - INFO - dropout: 0.05
+10/03/2017 05:57:53 PM - INFO - epochs: 103
+10/03/2017 05:57:53 PM - INFO - loss: 0.70
+10/03/2017 05:57:53 PM - INFO - --------------------
+10/03/2017 05:57:57 PM - INFO - nb_neurons: 1024
+10/03/2017 05:57:57 PM - INFO - nb_layers: 1
+10/03/2017 05:57:57 PM - INFO - activation: relu
+10/03/2017 05:57:57 PM - INFO - optimizer: adam
+10/03/2017 05:57:57 PM - INFO - batch_size: 1024
+10/03/2017 05:57:57 PM - INFO - dropout: 0.05
+10/03/2017 06:07:52 PM - INFO - epochs: 142
+10/03/2017 06:07:52 PM - INFO - loss: 1.28
+10/03/2017 06:07:52 PM - INFO - --------------------
+10/03/2017 06:07:56 PM - INFO - nb_neurons: 1024
+10/03/2017 06:07:56 PM - INFO - nb_layers: 5
+10/03/2017 06:07:56 PM - INFO - activation: relu
+10/03/2017 06:07:56 PM - INFO - optimizer: adam
+10/03/2017 06:07:56 PM - INFO - batch_size: 1024
+10/03/2017 06:07:56 PM - INFO - dropout: 0.05
+10/03/2017 07:13:02 PM - INFO - epochs: 88
+10/03/2017 07:13:02 PM - INFO - loss: 0.71
+10/03/2017 07:13:02 PM - INFO - --------------------
+10/03/2017 07:13:05 PM - INFO - nb_neurons: 512
+10/03/2017 07:13:05 PM - INFO - nb_layers: 5
+10/03/2017 07:13:05 PM - INFO - activation: relu
+10/03/2017 07:13:05 PM - INFO - optimizer: adam
+10/03/2017 07:13:05 PM - INFO - batch_size: 1024
+10/03/2017 07:13:05 PM - INFO - dropout: 0.05
+10/03/2017 07:31:18 PM - INFO - epochs: 68
+10/03/2017 07:31:18 PM - INFO - loss: 0.81
+10/03/2017 07:31:18 PM - INFO - --------------------
+10/03/2017 07:31:22 PM - INFO - nb_neurons: 512
+10/03/2017 07:31:22 PM - INFO - nb_layers: 5
+10/03/2017 07:31:22 PM - INFO - activation: elu
+10/03/2017 07:31:22 PM - INFO - optimizer: adamax
+10/03/2017 07:31:22 PM - INFO - batch_size: 256
+10/03/2017 07:31:22 PM - INFO - dropout: 0.05
+10/03/2017 08:19:00 PM - INFO - epochs: 97
+10/03/2017 08:19:00 PM - INFO - loss: 0.72
+10/03/2017 08:19:00 PM - INFO - --------------------
+10/03/2017 08:19:04 PM - INFO - nb_neurons: 768
+10/03/2017 08:19:04 PM - INFO - nb_layers: 5
+10/03/2017 08:19:04 PM - INFO - activation: elu
+10/03/2017 08:19:04 PM - INFO - optimizer: adam
+10/03/2017 08:19:04 PM - INFO - batch_size: 1024
+10/03/2017 08:19:04 PM - INFO - dropout: 0.05
+10/03/2017 09:05:43 PM - INFO - epochs: 95
+10/03/2017 09:05:43 PM - INFO - loss: 0.71
+10/03/2017 09:05:43 PM - INFO - --------------------
+10/03/2017 09:05:46 PM - INFO - nb_neurons: 768
+10/03/2017 09:05:46 PM - INFO - nb_layers: 4
+10/03/2017 09:05:46 PM - INFO - activation: relu
+10/03/2017 09:05:46 PM - INFO - optimizer: adam
+10/03/2017 09:05:46 PM - INFO - batch_size: 1024
+10/03/2017 09:05:46 PM - INFO - dropout: 0.05
+10/03/2017 09:57:44 PM - INFO - epochs: 146
+10/03/2017 09:57:44 PM - INFO - loss: 0.66
+10/03/2017 09:57:44 PM - INFO - --------------------
+10/03/2017 09:57:47 PM - INFO - nb_neurons: 512
+10/03/2017 09:57:47 PM - INFO - nb_layers: 5
+10/03/2017 09:57:47 PM - INFO - activation: relu
+10/03/2017 09:57:47 PM - INFO - optimizer: adamax
+10/03/2017 09:57:47 PM - INFO - batch_size: 256
+10/03/2017 09:57:47 PM - INFO - dropout: 0.05
+10/03/2017 10:48:50 PM - INFO - epochs: 101
+10/03/2017 10:48:50 PM - INFO - loss: 0.70
+10/03/2017 10:48:50 PM - INFO - --------------------
+10/03/2017 10:48:53 PM - INFO - nb_neurons: 512
+10/03/2017 10:48:53 PM - INFO - nb_layers: 5
+10/03/2017 10:48:53 PM - INFO - activation: relu
+10/03/2017 10:48:53 PM - INFO - optimizer: adamax
+10/03/2017 10:48:53 PM - INFO - batch_size: 256
+10/03/2017 10:48:53 PM - INFO - dropout: 0.15
+10/04/2017 12:07:02 AM - INFO - epochs: 155
+10/04/2017 12:07:02 AM - INFO - loss: 0.79
+10/04/2017 12:07:02 AM - INFO - --------------------
+10/04/2017 12:07:02 AM - INFO - Generation average: 0.74%
+10/04/2017 12:07:02 AM - INFO - Generation maximum: 1.28%
+10/04/2017 12:07:02 AM - INFO - Generation minimum: 0.65%
+10/04/2017 12:07:02 AM - INFO - --------------------------------------------------------------------------------
+10/04/2017 12:07:02 AM - INFO - ***Doing generation 7 of 10***
+10/04/2017 12:07:05 AM - INFO - nb_neurons: 1024
+10/04/2017 12:07:05 AM - INFO - nb_layers: 5
+10/04/2017 12:07:05 AM - INFO - activation: relu
+10/04/2017 12:07:05 AM - INFO - optimizer: adam
+10/04/2017 12:07:05 AM - INFO - batch_size: 1024
+10/04/2017 12:07:05 AM - INFO - dropout: 0.05
+10/04/2017 01:04:54 AM - INFO - epochs: 76
+10/04/2017 01:04:54 AM - INFO - loss: 0.72
+10/04/2017 01:04:54 AM - INFO - --------------------
+10/04/2017 01:04:58 AM - INFO - nb_neurons: 1024
+10/04/2017 01:04:58 AM - INFO - nb_layers: 5
+10/04/2017 01:04:58 AM - INFO - activation: relu
+10/04/2017 01:04:58 AM - INFO - optimizer: adam
+10/04/2017 01:04:58 AM - INFO - batch_size: 1024
+10/04/2017 01:04:58 AM - INFO - dropout: 0.05
+10/04/2017 02:18:56 AM - INFO - epochs: 98
+10/04/2017 02:18:56 AM - INFO - loss: 0.71
+10/04/2017 02:18:56 AM - INFO - --------------------
+10/04/2017 02:19:00 AM - INFO - nb_neurons: 1024
+10/04/2017 02:19:00 AM - INFO - nb_layers: 4
+10/04/2017 02:19:00 AM - INFO - activation: relu
+10/04/2017 02:19:00 AM - INFO - optimizer: adadelta
+10/04/2017 02:19:00 AM - INFO - batch_size: 1024
+10/04/2017 02:19:00 AM - INFO - dropout: 0.05
+10/04/2017 03:07:52 AM - INFO - epochs: 80
+10/04/2017 03:07:52 AM - INFO - loss: 0.74
+10/04/2017 03:07:52 AM - INFO - --------------------
+10/04/2017 03:07:56 AM - INFO - nb_neurons: 768
+10/04/2017 03:07:56 AM - INFO - nb_layers: 5
+10/04/2017 03:07:56 AM - INFO - activation: relu
+10/04/2017 03:07:56 AM - INFO - optimizer: adadelta
+10/04/2017 03:07:56 AM - INFO - batch_size: 1024
+10/04/2017 03:07:56 AM - INFO - dropout: 0.05
+10/04/2017 04:15:47 AM - INFO - epochs: 137
+10/04/2017 04:15:47 AM - INFO - loss: 0.67
+10/04/2017 04:15:47 AM - INFO - --------------------
+10/04/2017 04:15:51 AM - INFO - nb_neurons: 512
+10/04/2017 04:15:51 AM - INFO - nb_layers: 5
+10/04/2017 04:15:51 AM - INFO - activation: elu
+10/04/2017 04:15:51 AM - INFO - optimizer: adamax
+10/04/2017 04:15:51 AM - INFO - batch_size: 256
+10/04/2017 04:15:51 AM - INFO - dropout: 0.05
+10/04/2017 04:59:58 AM - INFO - epochs: 85
+10/04/2017 04:59:58 AM - INFO - loss: 0.75
+10/04/2017 04:59:58 AM - INFO - --------------------
+10/04/2017 05:00:02 AM - INFO - nb_neurons: 512
+10/04/2017 05:00:02 AM - INFO - nb_layers: 5
+10/04/2017 05:00:02 AM - INFO - activation: relu
+10/04/2017 05:00:02 AM - INFO - optimizer: adam
+10/04/2017 05:00:02 AM - INFO - batch_size: 256
+10/04/2017 05:00:02 AM - INFO - dropout: 0.05
+10/04/2017 06:04:46 AM - INFO - epochs: 124
+10/04/2017 06:04:46 AM - INFO - loss: 0.76
+10/04/2017 06:04:46 AM - INFO - --------------------
+10/04/2017 06:04:50 AM - INFO - nb_neurons: 768
+10/04/2017 06:04:50 AM - INFO - nb_layers: 5
+10/04/2017 06:04:50 AM - INFO - activation: relu
+10/04/2017 06:04:50 AM - INFO - optimizer: adadelta
+10/04/2017 06:04:50 AM - INFO - batch_size: 1024
+10/04/2017 06:04:50 AM - INFO - dropout: 0.05
+10/04/2017 07:09:23 AM - INFO - epochs: 135
+10/04/2017 07:09:23 AM - INFO - loss: 0.66
+10/04/2017 07:09:23 AM - INFO - --------------------
+10/04/2017 07:09:27 AM - INFO - nb_neurons: 768
+10/04/2017 07:09:27 AM - INFO - nb_layers: 5
+10/04/2017 07:09:27 AM - INFO - activation: relu
+10/04/2017 07:09:27 AM - INFO - optimizer: adadelta
+10/04/2017 07:09:27 AM - INFO - batch_size: 1024
+10/04/2017 07:09:27 AM - INFO - dropout: 0.05
+10/04/2017 08:11:30 AM - INFO - epochs: 131
+10/04/2017 08:11:30 AM - INFO - loss: 0.67
+10/04/2017 08:11:30 AM - INFO - --------------------
+10/04/2017 08:11:34 AM - INFO - nb_neurons: 1024
+10/04/2017 08:11:34 AM - INFO - nb_layers: 5
+10/04/2017 08:11:34 AM - INFO - activation: relu
+10/04/2017 08:11:34 AM - INFO - optimizer: adam
+10/04/2017 08:11:34 AM - INFO - batch_size: 1024
+10/04/2017 08:11:34 AM - INFO - dropout: 0.05
+10/04/2017 09:27:00 AM - INFO - epochs: 100
+10/04/2017 09:27:00 AM - INFO - loss: 0.70
+10/04/2017 09:27:00 AM - INFO - --------------------
+10/04/2017 09:27:03 AM - INFO - nb_neurons: 1024
+10/04/2017 09:27:03 AM - INFO - nb_layers: 5
+10/04/2017 09:27:03 AM - INFO - activation: relu
+10/04/2017 09:27:03 AM - INFO - optimizer: adam
+10/04/2017 09:27:03 AM - INFO - batch_size: 1024
+10/04/2017 09:27:03 AM - INFO - dropout: 0.05
+10/04/2017 10:39:40 AM - INFO - epochs: 96
+10/04/2017 10:39:40 AM - INFO - loss: 0.72
+10/04/2017 10:39:40 AM - INFO - --------------------
+10/04/2017 10:39:43 AM - INFO - nb_neurons: 768
+10/04/2017 10:39:43 AM - INFO - nb_layers: 5
+10/04/2017 10:39:43 AM - INFO - activation: relu
+10/04/2017 10:39:43 AM - INFO - optimizer: adamax
+10/04/2017 10:39:43 AM - INFO - batch_size: 256
+10/04/2017 10:39:43 AM - INFO - dropout: 0.05
+10/04/2017 11:54:04 AM - INFO - epochs: 94
+10/04/2017 11:54:04 AM - INFO - loss: 0.67
+10/04/2017 11:54:04 AM - INFO - --------------------
+10/04/2017 11:54:08 AM - INFO - nb_neurons: 768
+10/04/2017 11:54:08 AM - INFO - nb_layers: 4
+10/04/2017 11:54:08 AM - INFO - activation: relu
+10/04/2017 11:54:08 AM - INFO - optimizer: adamax
+10/04/2017 11:54:08 AM - INFO - batch_size: 1024
+10/04/2017 11:54:08 AM - INFO - dropout: 0.05
+10/04/2017 12:29:23 PM - INFO - epochs: 93
+10/04/2017 12:29:23 PM - INFO - loss: 0.68
+10/04/2017 12:29:23 PM - INFO - --------------------
+10/04/2017 12:29:23 PM - INFO - Generation average: 0.69%
+10/04/2017 12:29:23 PM - INFO - Generation maximum: 0.76%
+10/04/2017 12:29:23 PM - INFO - Generation minimum: 0.65%
+10/04/2017 12:29:23 PM - INFO - --------------------------------------------------------------------------------
+10/04/2017 12:29:23 PM - INFO - ***Doing generation 8 of 10***
+10/04/2017 12:29:26 PM - INFO - nb_neurons: 768
+10/04/2017 12:29:26 PM - INFO - nb_layers: 5
+10/04/2017 12:29:26 PM - INFO - activation: relu
+10/04/2017 12:29:26 PM - INFO - optimizer: adam
+10/04/2017 12:29:26 PM - INFO - batch_size: 1024
+10/04/2017 12:29:26 PM - INFO - dropout: 0.05
+10/04/2017 01:13:07 PM - INFO - epochs: 90
+10/04/2017 01:13:07 PM - INFO - loss: 0.74
+10/04/2017 01:13:07 PM - INFO - --------------------
+10/04/2017 01:13:11 PM - INFO - nb_neurons: 64
+10/04/2017 01:13:11 PM - INFO - nb_layers: 5
+10/04/2017 01:13:11 PM - INFO - activation: relu
+10/04/2017 01:13:11 PM - INFO - optimizer: adam
+10/04/2017 01:13:11 PM - INFO - batch_size: 1024
+10/04/2017 01:13:11 PM - INFO - dropout: 0.05
+10/04/2017 01:19:28 PM - INFO - epochs: 84
+10/04/2017 01:19:28 PM - INFO - loss: 1.42
+10/04/2017 01:19:28 PM - INFO - --------------------
+10/04/2017 01:19:32 PM - INFO - nb_neurons: 768
+10/04/2017 01:19:32 PM - INFO - nb_layers: 5
+10/04/2017 01:19:32 PM - INFO - activation: relu
+10/04/2017 01:19:32 PM - INFO - optimizer: adadelta
+10/04/2017 01:19:32 PM - INFO - batch_size: 1024
+10/04/2017 01:19:32 PM - INFO - dropout: 0.05
+10/04/2017 02:10:43 PM - INFO - epochs: 100
+10/04/2017 02:10:43 PM - INFO - loss: 0.70
+10/04/2017 02:10:43 PM - INFO - --------------------
+10/04/2017 02:10:47 PM - INFO - nb_neurons: 64
+10/04/2017 02:10:47 PM - INFO - nb_layers: 5
+10/04/2017 02:10:47 PM - INFO - activation: relu
+10/04/2017 02:10:47 PM - INFO - optimizer: adadelta
+10/04/2017 02:10:47 PM - INFO - batch_size: 1024
+10/04/2017 02:10:47 PM - INFO - dropout: 0.05
+10/04/2017 02:16:19 PM - INFO - epochs: 73
+10/04/2017 02:16:19 PM - INFO - loss: 1.55
+10/04/2017 02:16:19 PM - INFO - --------------------
+10/04/2017 02:16:22 PM - INFO - nb_neurons: 512
+10/04/2017 02:16:22 PM - INFO - nb_layers: 2
+10/04/2017 02:16:22 PM - INFO - activation: relu
+10/04/2017 02:16:22 PM - INFO - optimizer: adamax
+10/04/2017 02:16:22 PM - INFO - batch_size: 1024
+10/04/2017 02:16:22 PM - INFO - dropout: 0.05
+10/04/2017 02:30:24 PM - INFO - epochs: 127
+10/04/2017 02:30:24 PM - INFO - loss: 0.86
+10/04/2017 02:30:24 PM - INFO - --------------------
+10/04/2017 02:30:28 PM - INFO - nb_neurons: 768
+10/04/2017 02:30:28 PM - INFO - nb_layers: 2
+10/04/2017 02:30:28 PM - INFO - activation: relu
+10/04/2017 02:30:28 PM - INFO - optimizer: adamax
+10/04/2017 02:30:28 PM - INFO - batch_size: 1024
+10/04/2017 02:30:28 PM - INFO - dropout: 0.05
+10/04/2017 03:00:33 PM - INFO - epochs: 181
+10/04/2017 03:00:33 PM - INFO - loss: 0.74
+10/04/2017 03:00:33 PM - INFO - --------------------
+10/04/2017 03:00:37 PM - INFO - nb_neurons: 768
+10/04/2017 03:00:37 PM - INFO - nb_layers: 4
+10/04/2017 03:00:37 PM - INFO - activation: relu
+10/04/2017 03:00:37 PM - INFO - optimizer: adadelta
+10/04/2017 03:00:37 PM - INFO - batch_size: 1024
+10/04/2017 03:00:37 PM - INFO - dropout: 0.05
+10/04/2017 03:40:33 PM - INFO - epochs: 98
+10/04/2017 03:40:33 PM - INFO - loss: 0.71
+10/04/2017 03:40:33 PM - INFO - --------------------
+10/04/2017 03:40:37 PM - INFO - nb_neurons: 768
+10/04/2017 03:40:37 PM - INFO - nb_layers: 4
+10/04/2017 03:40:37 PM - INFO - activation: relu
+10/04/2017 03:40:37 PM - INFO - optimizer: adadelta
+10/04/2017 03:40:37 PM - INFO - batch_size: 1024
+10/04/2017 03:40:37 PM - INFO - dropout: 0.05
+10/04/2017 04:11:43 PM - INFO - epochs: 76
+10/04/2017 04:11:43 PM - INFO - loss: 0.79
+10/04/2017 04:11:43 PM - INFO - --------------------
+10/04/2017 04:11:47 PM - INFO - nb_neurons: 64
+10/04/2017 04:11:47 PM - INFO - nb_layers: 5
+10/04/2017 04:11:47 PM - INFO - activation: relu
+10/04/2017 04:11:47 PM - INFO - optimizer: adam
+10/04/2017 04:11:47 PM - INFO - batch_size: 256
+10/04/2017 04:11:47 PM - INFO - dropout: 0.05
+10/04/2017 04:23:50 PM - INFO - epochs: 92
+10/04/2017 04:23:50 PM - INFO - loss: 1.41
+10/04/2017 04:23:50 PM - INFO - --------------------
+10/04/2017 04:23:54 PM - INFO - nb_neurons: 64
+10/04/2017 04:23:54 PM - INFO - nb_layers: 5
+10/04/2017 04:23:54 PM - INFO - activation: relu
+10/04/2017 04:23:54 PM - INFO - optimizer: adam
+10/04/2017 04:23:54 PM - INFO - batch_size: 256
+10/04/2017 04:23:54 PM - INFO - dropout: 0.05
+10/04/2017 04:31:15 PM - INFO - epochs: 55
+10/04/2017 04:31:15 PM - INFO - loss: 1.47
+10/04/2017 04:31:15 PM - INFO - --------------------
+10/04/2017 04:31:15 PM - INFO - Generation average: 0.86%
+10/04/2017 04:31:15 PM - INFO - Generation maximum: 1.55%
+10/04/2017 04:31:15 PM - INFO - Generation minimum: 0.65%
+10/04/2017 04:31:15 PM - INFO - --------------------------------------------------------------------------------
+10/04/2017 04:31:15 PM - INFO - ***Doing generation 9 of 10***
+10/04/2017 04:31:19 PM - INFO - nb_neurons: 768
+10/04/2017 04:31:19 PM - INFO - nb_layers: 5
+10/04/2017 04:31:19 PM - INFO - activation: relu
+10/04/2017 04:31:19 PM - INFO - optimizer: adadelta
+10/04/2017 04:31:19 PM - INFO - batch_size: 1024
+10/04/2017 04:31:19 PM - INFO - dropout: 0.05
+10/04/2017 05:44:06 PM - INFO - epochs: 139
+10/04/2017 05:44:06 PM - INFO - loss: 0.67
+10/04/2017 05:44:06 PM - INFO - --------------------
+10/04/2017 05:44:10 PM - INFO - nb_neurons: 768
+10/04/2017 05:44:10 PM - INFO - nb_layers: 5
+10/04/2017 05:44:10 PM - INFO - activation: relu
+10/04/2017 05:44:10 PM - INFO - optimizer: adadelta
+10/04/2017 05:44:10 PM - INFO - batch_size: 256
+10/04/2017 05:44:10 PM - INFO - dropout: 0.05
+10/04/2017 07:07:06 PM - INFO - epochs: 96
+10/04/2017 07:07:06 PM - INFO - loss: 0.66
+10/04/2017 07:07:06 PM - INFO - --------------------
+10/04/2017 07:07:09 PM - INFO - nb_neurons: 768
+10/04/2017 07:07:09 PM - INFO - nb_layers: 5
+10/04/2017 07:07:09 PM - INFO - activation: relu
+10/04/2017 07:07:09 PM - INFO - optimizer: adamax
+10/04/2017 07:07:09 PM - INFO - batch_size: 256
+10/04/2017 07:07:09 PM - INFO - dropout: 0.05
+10/04/2017 08:11:58 PM - INFO - epochs: 78
+10/04/2017 08:11:58 PM - INFO - loss: 0.69
+10/04/2017 08:11:58 PM - INFO - --------------------
+10/04/2017 08:12:01 PM - INFO - nb_neurons: 512
+10/04/2017 08:12:01 PM - INFO - nb_layers: 5
+10/04/2017 08:12:01 PM - INFO - activation: relu
+10/04/2017 08:12:01 PM - INFO - optimizer: adadelta
+10/04/2017 08:12:01 PM - INFO - batch_size: 1024
+10/04/2017 08:12:01 PM - INFO - dropout: 0.05
+10/04/2017 08:51:55 PM - INFO - epochs: 136
+10/04/2017 08:51:55 PM - INFO - loss: 0.70
+10/04/2017 08:51:55 PM - INFO - --------------------
+10/04/2017 08:51:58 PM - INFO - nb_neurons: 512
+10/04/2017 08:51:58 PM - INFO - nb_layers: 2
+10/04/2017 08:51:58 PM - INFO - activation: relu
+10/04/2017 08:51:58 PM - INFO - optimizer: adamax
+10/04/2017 08:51:58 PM - INFO - batch_size: 1024
+10/04/2017 08:51:58 PM - INFO - dropout: 0.05
+10/04/2017 09:06:38 PM - INFO - epochs: 129
+10/04/2017 09:06:38 PM - INFO - loss: 0.84
+10/04/2017 09:06:38 PM - INFO - --------------------
+10/04/2017 09:06:41 PM - INFO - nb_neurons: 512
+10/04/2017 09:06:41 PM - INFO - nb_layers: 5
+10/04/2017 09:06:41 PM - INFO - activation: relu
+10/04/2017 09:06:41 PM - INFO - optimizer: adamax
+10/04/2017 09:06:41 PM - INFO - batch_size: 1024
+10/04/2017 09:06:41 PM - INFO - dropout: 0.05
+10/06/2017 06:15:56 AM - INFO - ***Evolving 10 generations with population 20***
+10/06/2017 06:15:56 AM - INFO - ***Doing generation 1 of 10***
+10/06/2017 06:17:06 PM - INFO - ***Evolving 10 generations with population 20***
+10/06/2017 06:17:06 PM - INFO - ***Doing generation 1 of 10***
+10/06/2017 06:17:09 PM - INFO - number: 0
+10/06/2017 06:17:09 PM - INFO - max_depth: 70
+10/06/2017 06:17:09 PM - INFO - base_score: 0.3
+10/06/2017 06:17:09 PM - INFO - colsample_bylevel: 0.75
+10/06/2017 06:17:09 PM - INFO - colsample_bytree: 0.15
+10/06/2017 06:17:09 PM - INFO - gamma: 0.3
+10/06/2017 06:17:09 PM - INFO - min_child_weight: 0
+10/06/2017 06:17:09 PM - INFO - learning_rate: 0.05
+10/06/2017 06:17:09 PM - INFO - booster: gbtree
+10/06/2017 06:59:10 PM - INFO - best round: 2258
+10/06/2017 06:59:10 PM - INFO - loss: 0.68
+10/06/2017 06:59:10 PM - INFO - --------------------
+10/06/2017 06:59:17 PM - INFO - number: 1
+10/06/2017 06:59:17 PM - INFO - max_depth: 90
+10/06/2017 06:59:17 PM - INFO - base_score: 0.15
+10/06/2017 06:59:17 PM - INFO - colsample_bylevel: 0.3
+10/06/2017 06:59:17 PM - INFO - colsample_bytree: 0.6
+10/06/2017 06:59:17 PM - INFO - gamma: 1.0
+10/06/2017 06:59:17 PM - INFO - min_child_weight: 3
+10/06/2017 06:59:17 PM - INFO - learning_rate: 0.175
+10/06/2017 06:59:17 PM - INFO - booster: dart
+10/06/2017 07:20:31 PM - INFO - ***Evolving 10 generations with population 20***
+10/06/2017 07:20:31 PM - INFO - ***Doing generation 1 of 10***
+10/06/2017 07:20:34 PM - INFO - number: 0
+10/06/2017 07:20:34 PM - INFO - max_depth: 110
+10/06/2017 07:20:34 PM - INFO - base_score: 1.0
+10/06/2017 07:20:34 PM - INFO - colsample_bylevel: 0.3
+10/06/2017 07:20:34 PM - INFO - colsample_bytree: 0.6
+10/06/2017 07:20:34 PM - INFO - gamma: 0.45
+10/06/2017 07:20:34 PM - INFO - min_child_weight: 0
+10/06/2017 07:20:34 PM - INFO - learning_rate: 0.1
+10/06/2017 07:31:28 PM - INFO - best round: 519
+10/06/2017 07:31:28 PM - INFO - loss: 0.60
+10/06/2017 07:31:28 PM - INFO - --------------------
+10/06/2017 07:31:31 PM - INFO - number: 1
+10/06/2017 07:31:31 PM - INFO - max_depth: 90
+10/06/2017 07:31:31 PM - INFO - base_score: 0.6
+10/06/2017 07:31:31 PM - INFO - colsample_bylevel: 1.0
+10/06/2017 07:31:31 PM - INFO - colsample_bytree: 1.0
+10/06/2017 07:31:31 PM - INFO - gamma: 0.45
+10/06/2017 07:31:31 PM - INFO - min_child_weight: 0
+10/06/2017 07:31:31 PM - INFO - learning_rate: 0.175
+10/06/2017 07:34:58 PM - INFO - best round: 51
+10/06/2017 07:34:58 PM - INFO - loss: 0.65
+10/06/2017 07:34:58 PM - INFO - --------------------
+10/06/2017 07:35:01 PM - INFO - number: 2
+10/06/2017 07:35:01 PM - INFO - max_depth: 70
+10/06/2017 07:35:01 PM - INFO - base_score: 0.75
+10/06/2017 07:35:01 PM - INFO - colsample_bylevel: 0.45
+10/06/2017 07:35:01 PM - INFO - colsample_bytree: 1.0
+10/06/2017 07:35:01 PM - INFO - gamma: 0.9
+10/06/2017 07:35:01 PM - INFO - min_child_weight: 2
+10/06/2017 07:35:01 PM - INFO - learning_rate: 0.05
+10/06/2017 07:52:14 PM - INFO - best round: 579
+10/06/2017 07:52:14 PM - INFO - loss: 0.60
+10/06/2017 07:52:14 PM - INFO - --------------------
+10/06/2017 07:52:17 PM - INFO - number: 3
+10/06/2017 07:52:17 PM - INFO - max_depth: 30
+10/06/2017 07:52:17 PM - INFO - base_score: 0.3
+10/06/2017 07:52:17 PM - INFO - colsample_bylevel: 0.45
+10/06/2017 07:52:17 PM - INFO - colsample_bytree: 1.0
+10/06/2017 07:52:17 PM - INFO - gamma: 0.75
+10/06/2017 07:52:17 PM - INFO - min_child_weight: 1
+10/06/2017 07:52:17 PM - INFO - learning_rate: 0.125
+10/06/2017 07:54:53 PM - INFO - best round: 142
+10/06/2017 07:54:53 PM - INFO - loss: 0.61
+10/06/2017 07:54:53 PM - INFO - --------------------
+10/06/2017 07:54:56 PM - INFO - number: 4
+10/06/2017 07:54:56 PM - INFO - max_depth: 30
+10/06/2017 07:54:56 PM - INFO - base_score: 0
+10/06/2017 07:54:56 PM - INFO - colsample_bylevel: 0.3
+10/06/2017 07:54:56 PM - INFO - colsample_bytree: 0.15
+10/06/2017 07:54:56 PM - INFO - gamma: 0.9
+10/06/2017 07:54:56 PM - INFO - min_child_weight: 4
+10/06/2017 07:54:56 PM - INFO - learning_rate: 0.025
