@@ -50,4 +50,4 @@ class Network():
     def print_network(self):
         """Print out a network."""
         logging.info(self.network)
-        logging.info("Network loss: %.3f" % (self.loss * 100))
+        logging.info("Network loss: %.3f" % (self.loss))

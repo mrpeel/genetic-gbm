@@ -11,6 +11,10 @@ from sklearn.metrics import mean_absolute_error
 import pandas as pd
 import numpy as np
 
+from keras.models import Sequential, Model
+from keras.models import load_model
+
+
 import logging
 
 def sc_mean_absolute_percentage_error(y_true, y_pred):
@@ -93,7 +97,14 @@ def train_and_score_xgb(network):
     test_log_y = safe_log(test_y)
     test_x = df_all_test_x.as_matrix()
 
+    # Use keras model to generate x vals
+    mae_intermediate_model = load_model('models/mae_intermediate_model.h5')
 
+    mae_vals_train = mae_intermediate_model.predict(train_x)
+    mae_vals_test = mae_intermediate_model.predict(test_x)
+
+    train_x = mae_vals_train
+    test_x = mae_vals_test
 
     model = compile_model(network)
 
@@ -104,12 +115,12 @@ def train_and_score_xgb(network):
         logging.info('%s: %s' % (property, network[property]))
 
 
-    eval_set = [(test_x, test_y)]
-    model.fit(train_x, train_y, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
+    eval_set = [(test_x, test_log_y)]
+    model.fit(train_x, train_log_y, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
                 verbose=False)
 
     predictions = model.predict(test_x)
-    score = mean_absolute_error(test_y, predictions)
+    score = mean_absolute_error(test_log_y, predictions)
 
     print('\rResults')
 
@@ -123,7 +134,7 @@ def train_and_score_xgb(network):
     print('-' * 20)
 
     logging.info('best round: %d' % best_round)
-    logging.info('loss: %.2f' % score)
+    logging.info('loss: %.4f' % score)
     logging.info('-' * 20)
 
     return score

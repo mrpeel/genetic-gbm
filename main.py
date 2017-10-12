@@ -7,7 +7,7 @@ import numpy as np
 # Setup logging.
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%m/%d/%Y %I:%M:%S %p',
+    datefmt='%d/%m/%Y %I:%M:%S %p',
     level=logging.DEBUG,
     filename='log.txt'
 )
@@ -69,14 +69,14 @@ def generate(generations, population, nn_param_choices):
         np_loss = get_np_losses(networks)
 
         # Print out the average loss each generation.
-        logging.info("Generation average: %.2f%%" % (np.mean(np_loss)))
-        logging.info("Generation maximum: %.2f%%" % (np.amax(np_loss)))
-        logging.info("Generation minimum: %.2f%%" % (np.amin(np_loss)))
+        logging.info("Generation average: %.3f%%" % (np.mean(np_loss)))
+        logging.info("Generation maximum: %.3f%%" % (np.max(np_loss)))
+        logging.info("Generation minimum: %.3f%%" % (np.min(np_loss)))
         logging.info('-'*80)
 
-        print("\rGeneration average: %.2f%%" % (np.mean(np_loss)))
-        print("Generation maximum: %.2f%%" % (np.amax(np_loss)))
-        print("Generation minimum: %.2f%%" % (np.amin(np_loss)))
+        print("\rGeneration average: %.3f%%" % (np.mean(np_loss)))
+        print("Generation maximum: %.3f%%" % (np.max(np_loss)))
+        print("Generation minimum: %.3f%%" % (np.min(np_loss)))
         print('-'*80)
 
         # Evolve, except on the last iteration.
@@ -103,15 +103,16 @@ def print_networks(networks):
 
 def main():
     """Evolve a network."""
-    generations = 10  # Number of times to evole the population.
-    population = 20  # Number of networks in each generation.
+    generations = 10  # Number of times to evolve the population.
+    population = 25  # Number of networks in each generation.
 
     nn_param_choices = {
-        'max_depth':  [30, 50, 70, 90, 110, 130, 150],
-        'base_score': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.0],
-        'colsample_bylevel': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.0],
-        'colsample_bytree': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.0],
-        'gamma': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.0],
+        'max_depth':  [10, 30, 50, 70, 90, 110, 130],
+        'base_score': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
+        # 'colsample_bylevel': [0.1, 0.25, 0.4, 0.55, 0.70, 0.85, 1.0],
+        'colsample_bylevel': [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        'colsample_bytree': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
+        'gamma': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9],
         'min_child_weight': [0, 1, 2, 3, 4, 5],
         'learning_rate':  [0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175],
         # 'booster': ['gbtree', 'dart'],
