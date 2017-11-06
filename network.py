@@ -43,7 +43,7 @@ class Network():
 
         """
         if self.loss == 0.:
-            self.loss = train_and_score_xgb(self.network)
+            self.loss = train_and_score_bagging(self.network)
             # self.loss = train_and_score_entity_embedding(self.network)
 
 
