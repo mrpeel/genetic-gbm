@@ -11,8 +11,8 @@ from sklearn.metrics import mean_absolute_error
 import pandas as pd
 import numpy as np
 
-from keras.models import Sequential, Model
 from keras.models import load_model
+import lightgbm as lgb
 
 
 import logging
@@ -24,14 +24,14 @@ def sc_mean_absolute_percentage_error(y_true, y_pred):
     return 100. * K.mean(diff, axis=-1)
 
 def safe_log(input_array):
-    return_vals = input_array.copy()
+    return_vals = input_array.reshape(input_array.shape[0], ).copy()
     neg_mask = return_vals < 0
     return_vals = np.log(np.absolute(return_vals) + 1)
     return_vals[neg_mask] *= -1.
     return return_vals
 
 def safe_exp(input_array):
-    return_vals = input_array.copy()
+    return_vals = input_array.reshape(input_array.shape[0], ).copy()
     neg_mask = return_vals < 0
     return_vals = np.exp(np.clip(np.absolute(return_vals), -7, 7)) - 1
     return_vals[neg_mask] *= -1.
@@ -39,21 +39,46 @@ def safe_exp(input_array):
 
 
 def safe_mape(actual_y, prediction_y):
-    """
-    Calculate mean absolute percentage error
-
-    Args:
-        actual_y - numpy array containing targets with shape (n_samples, n_targets)
-        prediction_y - numpy array containing predictions with shape (n_samples, n_targets)
-    """
-    diff = np.absolute((actual_y - prediction_y) / np.clip(np.absolute(actual_y), 1., None))
+    actual, prediction = reshape_vals(actual_y, prediction_y)
+    diff = np.absolute((actual - prediction) / np.clip(np.absolute(actual), 1., None))
     return 100. * np.mean(diff)
 
 def safe_maepe(actual_y, prediction_y):
-    mape = safe_mape(actual_y, prediction_y)
-    mae = mean_absolute_error(actual_y, prediction_y)
+    actual, prediction = reshape_vals(actual_y, prediction_y)
+    mape = safe_mape(actual, prediction)
+    mae = mean_absolute_error(actual, prediction)
 
     return (mape * mae)
+
+def mle_eval(actual_y, eval_y):
+    prediction_y = eval_y.get_label()
+    assert len(actual_y) == len(prediction_y)
+    return 'error', np.mean(np.absolute(safe_log(actual_y) - safe_log(prediction_y)))
+
+def mape_eval(actual_y, eval_y):
+    prediction_y = eval_y.get_label()
+    assert len(actual_y) == len(prediction_y)
+    return 'error', safe_mape(actual_y, eval_y)
+
+def maepe_eval(actual_y, eval_y):
+    prediction_y = eval_y.get_label()
+    assert len(actual_y) == len(prediction_y)
+    return 'error', safe_maepe(actual_y, eval_y)
+
+def reshape_vals(actual_y, prediction_y):
+    actual_y = actual_y.reshape(actual_y.shape[0], )
+    prediction_y = prediction_y.reshape(prediction_y.shape[0], )
+    return actual_y, prediction_y
+
+def mape_objetive(actual_y, eval_y):
+    label = eval_y.get_label()
+    assert len(actual_y) == len(prediction_y)
+    grad = -100((label - actual_y) / label)
+    hess = 100 / (label)
+    return grad, hess
+
+def round_down(num, divisor):
+    return num - (num%divisor)
 
 def compile_model(network):
     """Compile a sequential model.
@@ -105,11 +130,11 @@ def train_and_score_xgb(network):
     train_y = df_all_train_y[0].values
     train_actuals = df_all_train_actuals[0].values
     train_log_y = safe_log(train_y)
-    train_x = df_all_train_x.as_matrix()
-    test_actuals = df_all_test_actuals.as_matrix()
+    train_x = df_all_train_x.values
+    test_actuals = df_all_test_actuals.values
     test_y = df_all_test_y[0].values
     test_log_y = safe_log(test_y)
-    test_x = df_all_test_x.as_matrix()
+    test_x = df_all_test_x.values
 
     # Use keras model to generate x vals
     mae_intermediate_model = load_model('models/mae_intermediate_model.h5')
@@ -168,10 +193,10 @@ def train_and_score_bagging(network):
     test_actuals = pd.read_pickle('data/test_actuals.pkl.gz', compression='gzip')
 
 
-    train_x = train_predictions.as_matrix()
+    train_x = train_predictions.values
     train_y = train_actuals[0].values
     train_log_y = safe_log(train_y)
-    test_x = test_predictions.as_matrix()
+    test_x = test_predictions.values
     test_y = test_actuals[0].values
     test_log_y = safe_log(test_y)
 
@@ -210,6 +235,93 @@ def train_and_score_bagging(network):
     print('-' * 20)
 
     logging.info('best round: %d' % best_round)
+    logging.info('mae: %.4f' % mae)
+    logging.info('mape: %.4f' % mape)
+    logging.info('maepe: %.4f' % maepe)
+    logging.info('-' * 20)
+
+    return score
+
+def train_and_score_lgbm(network):
+
+    df_all_train_x = pd.read_pickle('data/df_all_train_x.pkl.gz', compression='gzip')
+    df_all_train_y = pd.read_pickle('data/df_all_train_y.pkl.gz', compression='gzip')
+    df_all_train_actuals = pd.read_pickle('data/df_all_train_actuals.pkl.gz', compression='gzip')
+    df_all_test_x = pd.read_pickle('data/df_all_test_x.pkl.gz', compression='gzip')
+    df_all_test_y = pd.read_pickle('data/df_all_test_y.pkl.gz', compression='gzip')
+    df_all_test_actuals = pd.read_pickle('data/df_all_test_actuals.pkl.gz', compression='gzip')
+
+    train_y = df_all_train_y[0].values
+    train_actuals = df_all_train_actuals[0].values
+    train_log_y = safe_log(train_y)
+    test_actuals = df_all_test_actuals[0].values
+    test_y = df_all_test_y[0].values
+    test_log_y = safe_log(test_y)
+
+    # Use keras model to generate x vals
+    #mae_intermediate_model = load_model('models/mae_intermediate_model.h5')
+    # mae_vals_train = mae_intermediate_model.predict(train_x)
+    # mae_vals_test = mae_intermediate_model.predict(test_x)
+    #
+    train_set = lgb.Dataset(df_all_train_x, label=train_log_y)
+    eval_set = lgb.Dataset(df_all_test_x, reference=train_set, label=test_log_y)
+
+
+    print('\rNetwork')
+
+    for property in network:
+        print(property, ':', network[property])
+        logging.info('%s: %s' % (property, network[property]))
+
+    params = network
+
+    del params['number']
+
+    params['verbosity'] = -1
+    params['histogram_pool_size'] = 8192
+    params['metric'] = ['mae']
+    params['metric_freq'] = 10
+
+    # feature_name and categorical_feature
+    gbm = lgb.train(params,
+                    train_set,
+                    valid_sets=eval_set,  # eval training data
+                    # feval=mle_eval,
+                     learning_rates=lambda iter: 0.1 * 0.999 ** (round_down(iter, 10)),
+                    num_boost_round=500,
+                    early_stopping_rounds=5)
+
+
+    iteration_number = 500
+
+    if gbm.best_iteration:
+        iteration_number = gbm.best_iteration
+
+    predictions = gbm.predict(df_all_test_x, num_iteration=iteration_number)
+    # eval_predictions = safe_exp(predictions)
+    eval_predictions = safe_exp(safe_exp(predictions))
+    # eval_predictions = predictions
+
+    mae = mean_absolute_error(test_actuals, eval_predictions)
+    mape = safe_mape(test_actuals, eval_predictions)
+    maepe = safe_maepe(test_actuals, eval_predictions)
+
+    score = gbm.best_score['valid_0']['l1']
+
+    print('\rResults')
+
+    if np.isnan(score):
+        score = 9999
+
+    print('best iteration:', iteration_number)
+    print('score:', score)
+    print('mae:', mae)
+    print('mape:', mape)
+    print('maepe:', maepe)
+    print('-' * 20)
+
+    logging.info('best round: %d' % iteration_number)
+    logging.info('score: %.4f' % score)
     logging.info('mae: %.4f' % mae)
     logging.info('mape: %.4f' % mape)
     logging.info('maepe: %.4f' % maepe)

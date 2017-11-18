@@ -37,14 +37,18 @@ class Network():
         """
         self.network = network
 
-    def train(self):
+    def train(self, type):
         """Train the network and record the loss.
 
 
         """
         if self.loss == 0.:
-            self.loss = train_and_score_bagging(self.network)
-            # self.loss = train_and_score_entity_embedding(self.network)
+            if type == "bagging":
+                self.loss = train_and_score_bagging(self.network)
+            elif type =="xgb":
+                self.loss = train_and_score_xgb(self.network)
+            elif type == "lgbm":
+                self.loss = train_and_score_lgbm(self.network)
 
 
     def print_network(self):

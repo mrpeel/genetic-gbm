@@ -1,0 +1,220 @@
+ log of y
+
+            'num_leaves': 65536,
+            'max_bin': 5000000,
+            'boosting_type': "gbdt",
+            'feature_fraction': 0.7,
+            'min_split_gain': 0,
+            'boost_from_average': True,
+			
+		    params['verbosity'] = -1
+		    params['histogram_pool_size'] = 8192
+		    params['metric'] = ['mae', 'huber']
+		    params['metric_freq'] = 10
+
+		    # feature_name and categorical_feature
+		    gbm = lgb.train(params,
+		                    train_set,
+		                    valid_sets=eval_set,  # eval training data
+		                    # feval=mle_eval,
+		                    # Set learning rate to reduce every 10 iterations
+		                    learning_rates=lambda iter: 0.125 * (0.999 ** round_down(iter, 10)),
+		                    num_boost_round=500,
+		                    early_stopping_rounds=5)
+			
+
+best iteration: 308
+mae: 8.66692629809
+mape: 57.83721134
+--------------------
+Mean absolute error: 8.66692629809
+Mean absolute percentage error: 57.83721134
+r2: 0.622015379084
+
+---------
+log of y huber
+
+        network = {
+            'objective': "huber",
+            'num_leaves': 65536,
+            'max_bin': 5000000,
+            'boosting_type': "gbdt",
+            'feature_fraction': 0.7,
+            'min_split_gain': 0,
+            'boost_from_average': True,
+            'verbosity': -1,
+            'histogram_pool_size': 8192,
+            'metric': ['mae', 'huber'],
+            'metric_freq': 10,
+        }
+		
+gbm = lgb.train(params,
+                    train_set,
+                    valid_sets=eval_set,  # eval training data
+                    # feval=mle_eval,
+                    # Set learning rate to reduce every 10 iterations
+                    learning_rates=lambda iter: 0.125 * (0.999 ** round_down(iter, 10)),
+                    num_boost_round=500,
+                    early_stopping_rounds=5)
+
+
+
+Mean absolute error: 9.31674776609
+Mean absolute percentage error: 61.3407321805
+r2: 0.578257995197
+
+--------------------
+
+log log y - mae(l1)
+
+        network = {
+            'num_leaves': 32768,
+            'boosting_type': "gbdt",
+            'feature_fraction': 0.7,
+            'min_split_gain': 0,
+            'boost_from_average': True,
+            'verbosity': -1,
+            'histogram_pool_size': 8192,
+            'metric': ['mae', 'huber'],
+            'metric_freq': 10,
+        }
+
+gbm = lgb.train(params,
+                    train_set,
+                    valid_sets=eval_set,  # eval training data
+                    # feval=mle_eval,
+                    # Set learning rate to reduce every 10 iterations
+                    learning_rates=lambda iter: 0.125 * (0.999 ** round_down(iter, 10)),
+                    num_boost_round=500,
+                    early_stopping_rounds=5)
+
+
+lightgbm_predictions
+Mean absolute error: 11.9227982388
+Mean absolute percentage error: 62.6500555937
+r2: 0.332098114085
+
+-----
+
+
+Results: -100 to -50
+  log_y_mae
+    Mean absolute error:  20.7291920495
+    Mean absolute percentage error:  35.3293451373
+  log_y_huber
+    Mean absolute error:  23.6740330091
+    Mean absolute percentage error:  40.3597094766
+  log_log_y_mae_predictions
+    Mean absolute error:  32.2046417525
+    Mean absolute percentage error:  57.9397741885
+Results: -50 to -25
+  log_y_mae
+    Mean absolute error:  11.5934895868
+    Mean absolute percentage error:  33.9240683389
+  log_y_huber
+    Mean absolute error:  12.5341374101
+    Mean absolute percentage error:  36.582184787
+  log_log_y_mae_predictions
+    Mean absolute error:  17.5746896358
+    Mean absolute percentage error:  56.6278326205
+Results: -25 to -10
+  log_y_mae
+    Mean absolute error:  6.49836047992
+    Mean absolute percentage error:  39.4868751383
+  log_y_huber
+    Mean absolute error:  6.8449709954
+    Mean absolute percentage error:  41.6235031009
+  log_log_y_mae_predictions
+    Mean absolute error:  8.64479582867
+    Mean absolute percentage error:  59.8599146498
+Results: -10 to -5
+  log_y_mae
+    Mean absolute error:  3.61779525947
+    Mean absolute percentage error:  49.5839046767
+  log_y_huber
+    Mean absolute error:  3.78253183672
+    Mean absolute percentage error:  51.8931816762
+  log_log_y_mae_predictions
+    Mean absolute error:  4.25434807784
+    Mean absolute percentage error:  62.0923053439
+Results: -5 to 0
+  log_y_mae
+    Mean absolute error:  2.13886047847
+    Mean absolute percentage error:  137.060187397
+  log_y_huber
+    Mean absolute error:  2.23855477347
+    Mean absolute percentage error:  143.062499358
+  log_log_y_mae_predictions
+    Mean absolute error:  1.80461969521
+    Mean absolute percentage error:  132.566359057
+Results: 0 to 2
+  log_y_mae
+    Mean absolute error:  1.94623385559
+    Mean absolute percentage error:  184.614208709
+  log_y_huber
+    Mean absolute error:  2.03038166797
+    Mean absolute percentage error:  192.48240918
+  log_log_y_mae_predictions
+    Mean absolute error:  1.32382854268
+    Mean absolute percentage error:  136.067344231
+Results: 2 to 5
+  log_y_mae
+    Mean absolute error:  2.17882405605
+    Mean absolute percentage error:  64.341148938
+  log_y_huber
+    Mean absolute error:  2.27324226782
+    Mean absolute percentage error:  67.2255078849
+  log_log_y_mae_predictions
+    Mean absolute error:  2.22379937022
+    Mean absolute percentage error:  70.486801489
+Results: 5 to 10
+  log_y_mae
+    Mean absolute error:  3.37665275915
+    Mean absolute percentage error:  46.4135014724
+  log_y_huber
+    Mean absolute error:  3.62493065991
+    Mean absolute percentage error:  49.9371476055
+  log_log_y_mae_predictions
+    Mean absolute error:  3.94423403577
+    Mean absolute percentage error:  58.4563582453
+Results: 10 to 20
+  log_y_mae
+    Mean absolute error:  6.0464268726
+    Mean absolute percentage error:  41.7405204296
+  log_y_huber
+    Mean absolute error:  6.51761027235
+    Mean absolute percentage error:  44.8720837597
+  log_log_y_mae_predictions
+    Mean absolute error:  7.74975145501
+    Mean absolute percentage error:  58.4587441784
+Results: 20 to 50
+  log_y_mae
+    Mean absolute error:  12.6327760439
+    Mean absolute percentage error:  39.8294927089
+  log_y_huber
+    Mean absolute error:  14.0640603188
+    Mean absolute percentage error:  44.2586758771
+  log_log_y_mae_predictions
+    Mean absolute error:  17.8355561948
+    Mean absolute percentage error:  63.5202639219
+Results: 50 to 100
+  log_y_mae
+    Mean absolute error:  29.2386853253
+    Mean absolute percentage error:  41.6634132042
+  log_y_huber
+    Mean absolute error:  31.5739660107
+    Mean absolute percentage error:  45.1936402054
+  log_log_y_mae_predictions
+    Mean absolute error:  43.9541879694
+    Mean absolute percentage error:  67.6413457152
+Results: 100 to 1001
+  log_y_mae
+    Mean absolute error:  96.8527957907
+    Mean absolute percentage error:  45.0847070559
+  log_y_huber
+    Mean absolute error:  101.754820578
+    Mean absolute percentage error:  48.1137802867	
+  log_log_y_mae_predictions
+    Mean absolute error:  134.954055568
+    Mean absolute percentage error:  83.1399832426	
+	

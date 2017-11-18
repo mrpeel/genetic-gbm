@@ -12,7 +12,7 @@ logging.basicConfig(
     filename='log.txt'
 )
 
-def train_networks(networks):
+def train_networks(networks, type):
     """Train each network.
 
     Args:
@@ -20,7 +20,7 @@ def train_networks(networks):
     """
     pbar = tqdm(total=len(networks))
     for network in networks:
-        network.train()
+        network.train(type)
         pbar.update(1)
     pbar.close()
 
@@ -42,7 +42,7 @@ def get_np_losses(networks):
 
     return np_losses
 
-def generate(generations, population, nn_param_choices):
+def generate(generations, population, nn_param_choices, type):
     """Generate a network with the genetic algorithm.
 
     Args:
@@ -68,7 +68,7 @@ def generate(generations, population, nn_param_choices):
             counter += 1
 
         # Train and get loss for networks.
-        train_networks(networks)
+        train_networks(networks, type)
 
         # Get the average loss for this generation.
         np_loss = get_np_losses(networks)
@@ -106,28 +106,51 @@ def print_networks(networks):
     for network in networks:
         network.print_network()
 
-def main():
+def main(type):
     """Evolve a network."""
     generations = 10  # Number of times to evolve the population.
-    population = 25  # Number of networks in each generation.
+    population = 20  # Number of networks in each generation.
 
-    nn_param_choices = {
-        'max_depth':  [10, 30, 50, 70, 90, 110, 130],
-        'base_score': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
-        # 'colsample_bylevel': [0.1, 0.25, 0.4, 0.55, 0.70, 0.85, 1.0],
-        'colsample_bylevel': [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
-        # 'colsample_bytree': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
-        'colsample_bytree': [0.6, 0.7, 0.8, 0.9, 1.0],
-        'gamma': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9],
-        'min_child_weight': [0, 1, 2, 3, 4, 5],
-        'learning_rate':  [0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175],
-        # 'booster': ['gbtree', 'dart'],
-    }
+    if type=="xgb":
+        xgb_param_choices = {
+            'max_depth':  [10, 30, 50, 70, 90, 110, 130],
+            'base_score': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
+            # 'colsample_bylevel': [0.1, 0.25, 0.4, 0.55, 0.70, 0.85, 1.0],
+            'colsample_bylevel': [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
+            # 'colsample_bytree': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
+            'colsample_bytree': [0.6, 0.7, 0.8, 0.9, 1.0],
+            'gamma': [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9],
+            'min_child_weight': [0, 1, 2, 3, 4, 5],
+            'learning_rate':  [0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175],
+            # 'booster': ['gbtree', 'dart'],
+        }
 
-    logging.info("***Evolving %d generations with population %d***" %
-                 (generations, population))
+        logging.info("***Evolving %d generations with population %d***" %
+                     (generations, population))
 
-    generate(generations, population, nn_param_choices)
+        generate(generations, population, xgb_param_choices, type)
+
+    else:
+        lgbm_param_choices = {
+            # 'objective': ['huber'],
+            # 'huber_delta': [2.],
+            'num_leaves': [8192, 16384, 32768, 65536, 131072],
+            # 'max_bin': [650000, 1250000, 2500000, 5000000],
+            # 'boosting_type': ['gbdt', 'rf', 'dart', 'goss'],
+            'boosting_type': ['gbdt', 'dart'],
+            # 'learning_rate': [0.025, 0.05, 0.075, 0.1],
+            'feature_fraction': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+            'bagging_fraction': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+            'bagging_freq': [0, 1, 2, 3, 4, 5],
+            'min_split_gain': [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+            'boost_from_average': [True, False],
+        }
+
+        logging.info("***Evolving %d generations with population %d***" %
+                     (generations, population))
+
+        generate(generations, population, lgbm_param_choices, type)
+
 
 if __name__ == '__main__':
-    main()
+    main("lgbm")
