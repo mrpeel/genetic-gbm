@@ -132,7 +132,7 @@ def main(type):
 
     else:
         lgbm_param_choices = {
-            # 'objective': ['huber'],
+            'objective': ['huber'],
             # 'huber_delta': [2.],
             'num_leaves': [8192, 16384, 32768, 65536, 131072],
             # 'max_bin': [650000, 1250000, 2500000, 5000000],

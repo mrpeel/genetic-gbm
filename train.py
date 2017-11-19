@@ -58,23 +58,23 @@ def mle_eval(actual_y, eval_y):
 def mape_eval(actual_y, eval_y):
     prediction_y = eval_y.get_label()
     assert len(actual_y) == len(prediction_y)
-    return 'error', safe_mape(actual_y, eval_y)
+    return 'mape', safe_mape(actual_y, prediction_y), False
 
 def maepe_eval(actual_y, eval_y):
     prediction_y = eval_y.get_label()
     assert len(actual_y) == len(prediction_y)
-    return 'error', safe_maepe(actual_y, eval_y)
+    return 'maepe', safe_maepe(actual_y, prediction_y), False
 
 def reshape_vals(actual_y, prediction_y):
     actual_y = actual_y.reshape(actual_y.shape[0], )
     prediction_y = prediction_y.reshape(prediction_y.shape[0], )
     return actual_y, prediction_y
 
-def mape_objetive(actual_y, eval_y):
+def mape_objective(actual_y, eval_y):
     label = eval_y.get_label()
-    assert len(actual_y) == len(prediction_y)
-    grad = -100((label - actual_y) / label)
-    hess = 100 / (label)
+    assert len(actual_y) == len(label)
+    grad = 100. * (actual_y - label) / np.clip(np.absolute(actual_y), 1., None)
+    hess = np.ones(len(label))
     return grad, hess
 
 def round_down(num, divisor):
@@ -263,8 +263,8 @@ def train_and_score_lgbm(network):
     # mae_vals_train = mae_intermediate_model.predict(train_x)
     # mae_vals_test = mae_intermediate_model.predict(test_x)
     #
-    train_set = lgb.Dataset(df_all_train_x, label=train_log_y)
-    eval_set = lgb.Dataset(df_all_test_x, reference=train_set, label=test_log_y)
+    train_set = lgb.Dataset(df_all_train_x, label=train_y)
+    eval_set = lgb.Dataset(df_all_test_x, reference=train_set, label=test_y)
 
 
     print('\rNetwork')
@@ -279,15 +279,16 @@ def train_and_score_lgbm(network):
 
     params['verbosity'] = -1
     params['histogram_pool_size'] = 8192
-    params['metric'] = ['mae']
+    # params['metric'] = ['mae']
     params['metric_freq'] = 10
 
     # feature_name and categorical_feature
     gbm = lgb.train(params,
                     train_set,
                     valid_sets=eval_set,  # eval training data
-                    # feval=mle_eval,
-                     learning_rates=lambda iter: 0.1 * 0.999 ** (round_down(iter, 10)),
+                    feval=maepe_eval,
+                    # fobj=mape_objective,
+                    learning_rates=lambda iter: 0.1 * 0.999 ** (round_down(iter, 10)),
                     num_boost_round=500,
                     early_stopping_rounds=5)
 
@@ -298,15 +299,15 @@ def train_and_score_lgbm(network):
         iteration_number = gbm.best_iteration
 
     predictions = gbm.predict(df_all_test_x, num_iteration=iteration_number)
-    # eval_predictions = safe_exp(predictions)
-    eval_predictions = safe_exp(safe_exp(predictions))
+    eval_predictions = safe_exp(predictions)
+    # eval_predictions = safe_exp(safe_exp(predictions))
     # eval_predictions = predictions
 
     mae = mean_absolute_error(test_actuals, eval_predictions)
     mape = safe_mape(test_actuals, eval_predictions)
     maepe = safe_maepe(test_actuals, eval_predictions)
 
-    score = gbm.best_score['valid_0']['l1']
+    score = gbm.best_score['valid_0']['maepe']
 
     print('\rResults')
 
