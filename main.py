@@ -132,7 +132,7 @@ def main(type):
 
     else:
         lgbm_param_choices = {
-            'objective': ['huber'],
+            # 'objective': ['huber'],
             # 'huber_delta': [2.],
             'num_leaves': [8192, 16384, 32768, 65536, 131072],
             # 'max_bin': [650000, 1250000, 2500000, 5000000],
@@ -143,6 +143,7 @@ def main(type):
             'bagging_fraction': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
             'bagging_freq': [0, 1, 2, 3, 4, 5],
             'min_split_gain': [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+            'lambda_l1': [0, 1, 2, 3, 4, 5],
             'boost_from_average': [True, False],
         }
 
