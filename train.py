@@ -71,10 +71,13 @@ def reshape_vals(actual_y, prediction_y):
     return actual_y, prediction_y
 
 def mape_objective(actual_y, eval_y):
-    label = eval_y.get_label()
-    assert len(actual_y) == len(label)
-    grad = 100. * (actual_y - label) / np.clip(np.absolute(actual_y), 1., None)
-    hess = np.ones(len(label))
+    predictions = eval_y.get_label()
+    assert len(actual_y) == len(predictions)
+    # diff = np.absolute((actual_y - predictions) / np.clip(np.absolute(actual_y), 1., None))
+    # grad = -100. * diff
+    # hess = np.ones(len(predictions))
+    grad = np.sign(predictions - actual_y) / np.clip(np.absolute(predictions), 0.1, None)
+    hess = np.zeros(len(predictions))
     return grad, hess
 
 def round_down(num, divisor):
@@ -286,9 +289,9 @@ def train_and_score_lgbm(network):
     gbm = lgb.train(params,
                     train_set,
                     valid_sets=eval_set,  # eval training data
-                    feval=maepe_eval,
-                    # fobj=mape_objective,
-                    learning_rates=lambda iter: 0.1 * 0.999 ** (round_down(iter, 10)),
+                    feval=mape_eval,
+                    fobj=mape_objective,
+                    learning_rates=lambda iter: 0.05 * 0.999 ** (round_down(iter, 10)),
                     num_boost_round=500,
                     early_stopping_rounds=5)
 
@@ -307,7 +310,7 @@ def train_and_score_lgbm(network):
     mape = safe_mape(test_actuals, eval_predictions)
     maepe = safe_maepe(test_actuals, eval_predictions)
 
-    score = gbm.best_score['valid_0']['maepe']
+    score = gbm.best_score['valid_0']['mape']
 
     print('\rResults')
 

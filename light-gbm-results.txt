@@ -152,12 +152,18 @@ Results: -100 to -50
   xgboost_log_mae
     Mean absolute error:  26.3753544792
     Mean absolute percentage error:  44.9261650548
-  xgboost_keras_mae
+**xgboost_keras_mae
     Mean absolute error:  12.6586027011
     Mean absolute percentage error:  21.5754263022
   xgboost_keras_log_mae
     Mean absolute error:  12.9903674283
     Mean absolute percentage error:  22.1369839351
+  keras_mape
+    Mean absolute error:  49.5440829416
+    Mean absolute percentage error:  83.8601265365
+  keras_log_y
+    Mean absolute error:  14.2930420675
+    Mean absolute percentage error:  24.2172423124
 Results: -50 to -25
   log_y_mae
     Mean absolute error:  11.5934895868
@@ -177,12 +183,18 @@ Results: -50 to -25
   xgboost_log_mae
     Mean absolute error:  13.9967021104
     Mean absolute percentage error:  40.751978504
-  xgboost_keras_mae
+**xgboost_keras_mae
     Mean absolute error:  6.83126376177
     Mean absolute percentage error:  20.2003232656
   xgboost_keras_log_mae
     Mean absolute error:  7.09845640387
     Mean absolute percentage error:  21.0035829084
+  keras_mape
+    Mean absolute error:  27.8235040369
+    Mean absolute percentage error:  81.1939380274
+  keras_log_y
+    Mean absolute error:  6.99615007191
+    Mean absolute percentage error:  20.5903408096
 Results: -25 to -10
   log_y_mae
     Mean absolute error:  6.49836047992
@@ -205,11 +217,17 @@ Results: -25 to -10
   xgboost_keras_mae
     Mean absolute error:  4.8348880028
     Mean absolute percentage error:  30.2218667165
-  xgboost_keras_log_mae
+**xgboost_keras_log_mae
     Mean absolute error:  5.05907833976
     Mean absolute percentage error:  31.5650822496
+  keras_mape
+    Mean absolute error:  13.1292900919
+    Mean absolute percentage error:  78.2573197163
+  keras_log_y
+    Mean absolute error:  4.68780025672
+    Mean absolute percentage error:  29.2859858323
 Results: -10 to -5
-  log_y_mae
+**log_y_mae
     Mean absolute error:  3.61779525947
     Mean absolute percentage error:  49.5839046767
   log_y_huber
@@ -233,6 +251,12 @@ Results: -10 to -5
   xgboost_keras_log_mae
     Mean absolute error:  3.78951411423
     Mean absolute percentage error:  52.770982037
+  keras_mape
+    Mean absolute error:  5.61949033412
+    Mean absolute percentage error:  75.8672038096
+  keras_log_y
+    Mean absolute error:  3.90771133402
+    Mean absolute percentage error:  54.84989314
 Results: -5 to 0
   log_y_mae
     Mean absolute error:  2.13886047847
@@ -258,6 +282,12 @@ Results: -5 to 0
   xgboost_keras_log_mae
     Mean absolute error:  3.39557957618
     Mean absolute percentage error:  240.047435274
+**keras_mape
+    Mean absolute error:  1.65887890041
+    Mean absolute percentage error:  73.3050456374
+  keras_log_y
+    Mean absolute error:  4.037413883
+    Mean absolute percentage error:  289.894672313
 Results: 0 to 2
   log_y_mae
     Mean absolute error:  1.94623385559
@@ -283,6 +313,12 @@ Results: 0 to 2
   xgboost_keras_log_mae
     Mean absolute error:  3.57402136877
     Mean absolute percentage error:  344.087614483
+**keras_mape
+    Mean absolute error:  0.793314092761
+    Mean absolute percentage error:  68.4603064374
+  keras_log_y
+    Mean absolute error:  4.37907488448
+    Mean absolute percentage error:  420.718168295
 Results: 2 to 5
   log_y_mae
     Mean absolute error:  2.17882405605
@@ -296,7 +332,7 @@ Results: 2 to 5
   log_y_huber_mae_mape
     Mean absolute error:  2.22204753557
     Mean absolute percentage error:  72.5176623152
-  xgboost_mae
+**xgboost_mae
     Mean absolute error:  1.95153841965
     Mean absolute percentage error:  58.0654218051
   xgboost_log_mae
@@ -308,6 +344,12 @@ Results: 2 to 5
   xgboost_keras_log_mae
     Mean absolute error:  2.77208743276
     Mean absolute percentage error:  82.8689407571
+  keras_mape
+    Mean absolute error:  2.67336557788
+    Mean absolute percentage error:  77.6350505667
+  keras_log_y
+    Mean absolute error:  3.20203607872
+    Mean absolute percentage error:  96.2080021264
 Results: 5 to 10
   log_y_mae
     Mean absolute error:  3.37665275915
@@ -321,7 +363,7 @@ Results: 5 to 10
   log_y_huber_mae_mape
     Mean absolute error:  3.4918883517
     Mean absolute percentage error:  53.4932239757
-  xgboost_mae
+**xgboost_mae
     Mean absolute error:  2.91481216568
     Mean absolute percentage error:  40.1250046828
   xgboost_log_mae
@@ -333,6 +375,12 @@ Results: 5 to 10
   xgboost_keras_log_mae
     Mean absolute error:  3.63478125604
     Mean absolute percentage error:  50.5446951045
+  keras_mape
+    Mean absolute error:  5.19434912548
+    Mean absolute percentage error:  70.6950424307
+  keras_log_y
+    Mean absolute error:  3.7778463098
+    Mean absolute percentage error:  52.8568552145
 Results: 10 to 20
   log_y_mae
     Mean absolute error:  6.0464268726
@@ -346,7 +394,7 @@ Results: 10 to 20
   log_y_huber_mae_mape
     Mean absolute error:  6.45678354908
     Mean absolute percentage error:  50.6437937487
-  xgboost_mae
+**xgboost_mae
     Mean absolute error:  5.02871895444
     Mean absolute percentage error:  34.7847199284
   xgboost_log_mae
@@ -358,6 +406,12 @@ Results: 10 to 20
   xgboost_keras_log_mae
     Mean absolute error:  5.14130512974
     Mean absolute percentage error:  35.8065242433
+  keras_mape
+    Mean absolute error:  11.3303130887
+    Mean absolute percentage error:  77.4957121746
+  keras_log_y
+    Mean absolute error:  5.07311441989
+    Mean absolute percentage error:  35.5967870551
 Results: 20 to 50
   log_y_mae
     Mean absolute error:  12.6327760439
@@ -377,12 +431,18 @@ Results: 20 to 50
   xgboost_log_mae
     Mean absolute error:  14.9125521473
     Mean absolute percentage error:  46.5835527672
-  xgboost_keras_mae
+**xgboost_keras_mae
     Mean absolute error:  8.86780983156
     Mean absolute percentage error:  28.3443542947
   xgboost_keras_log_mae
     Mean absolute error:  9.12330698225
     Mean absolute percentage error:  29.135737612
+  keras_mape
+    Mean absolute error:  29.3241774924
+    Mean absolute percentage error:  91.2592155842
+  keras_log_y
+    Mean absolute error:  9.06610207865
+    Mean absolute percentage error:  28.8041699996
 Results: 50 to 100
   log_y_mae
     Mean absolute error:  29.2386853253
@@ -402,12 +462,18 @@ Results: 50 to 100
   xgboost_log_mae
     Mean absolute error:  35.5555428098
     Mean absolute percentage error:  50.6774342475
-  xgboost_keras_mae
+**xgboost_keras_mae
     Mean absolute error:  18.103667711
     Mean absolute percentage error:  25.6680494109
   xgboost_keras_log_mae
     Mean absolute error:  18.5124201002
     Mean absolute percentage error:  26.2555386144
+  keras_mape
+    Mean absolute error:  68.2948102481
+    Mean absolute percentage error:  98.0050506045
+  keras_log_y
+    Mean absolute error:  18.7412656649
+    Mean absolute percentage error:  26.6104968691
 Results: 100 to 1001
   log_y_mae
     Mean absolute error:  96.8527957907
@@ -427,9 +493,15 @@ Results: 100 to 1001
   xgboost_log_mae
     Mean absolute error:  118.604650639
     Mean absolute percentage error:  56.5143415107
-  xgboost_keras_mae
+**xgboost_keras_mae
     Mean absolute error:  61.0955030106
     Mean absolute percentage error:  28.3440659989
   xgboost_keras_log_mae
     Mean absolute error:  62.3143199676
     Mean absolute percentage error:  28.8425426277	
+  keras_mape
+    Mean absolute error:  194.351033884
+    Mean absolute percentage error:  99.6038377472
+  keras_log_y
+    Mean absolute error:  63.5042626542
+    Mean absolute percentage error:  29.7895114276
