@@ -113,7 +113,7 @@ def main(type):
 
     if type=="xgb":
         xgb_param_choices = {
-            'max_depth':  [10, 30, 50, 70, 90, 110, 130],
+            'max_depth':  [10, 20, 30, 40, 50],
             'base_score': [0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1.0],
             # 'colsample_bylevel': [0.1, 0.25, 0.4, 0.55, 0.70, 0.85, 1.0],
             'colsample_bylevel': [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
@@ -154,4 +154,4 @@ def main(type):
 
 
 if __name__ == '__main__':
-    main("lgbm")
+    main("xgb")

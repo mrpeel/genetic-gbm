@@ -7,6 +7,7 @@ Based on:
 """
 import xgboost as xgb
 
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 import pandas as pd
 import numpy as np
@@ -104,6 +105,7 @@ def compile_model(network):
     min_child_weight = network['min_child_weight']
 
     model  = xgb.XGBRegressor(nthread=-1, n_estimators=5000,
+                              tree_method='hist',
                               # booster=booster,
                               max_depth=max_depth,
                               base_score=base_score,
@@ -111,7 +113,7 @@ def compile_model(network):
                               colsample_bytree=colsample_bytree,
                               gamma=gamma,
                               learning_rate=learning_rate,
-                               min_child_weight=min_child_weight)
+                              min_child_weight=min_child_weight)
 
     return model
 
@@ -124,9 +126,11 @@ def train_and_score_xgb(network):
     """
 
     df_all_train_x = pd.read_pickle('data/df_all_train_x.pkl.gz', compression='gzip')
+    ae_all_train_x = pd.read_pickle('data/ae_train_x.pkl.gz', compression='gzip')
     df_all_train_y = pd.read_pickle('data/df_all_train_y.pkl.gz', compression='gzip')
     df_all_train_actuals = pd.read_pickle('data/df_all_train_actuals.pkl.gz', compression='gzip')
     df_all_test_x = pd.read_pickle('data/df_all_test_x.pkl.gz', compression='gzip')
+    ae_all_test_x = pd.read_pickle('data/ae_test_x.pkl.gz', compression='gzip')
     df_all_test_y = pd.read_pickle('data/df_all_test_y.pkl.gz', compression='gzip')
     df_all_test_actuals = pd.read_pickle('data/df_all_test_actuals.pkl.gz', compression='gzip')
 
@@ -134,19 +138,21 @@ def train_and_score_xgb(network):
     train_actuals = df_all_train_actuals[0].values
     train_log_y = safe_log(train_y)
     train_x = df_all_train_x.values
+    train_ae = ae_all_train_x.values
     test_actuals = df_all_test_actuals.values
     test_y = df_all_test_y[0].values
     test_log_y = safe_log(test_y)
     test_x = df_all_test_x.values
+    test_ae = ae_all_test_x.values
 
     # Use keras model to generate x vals
-    mae_intermediate_model = load_model('models/mae_intermediate_model.h5')
+    # mae_intermediate_model = load_model('models/keras-mae-intermediate-model.h5')
+    #
+    # mae_vals_train = mae_intermediate_model.predict(train_x)
+    # mae_vals_test = mae_intermediate_model.predict(test_x)
 
-    mae_vals_train = mae_intermediate_model.predict(train_x)
-    mae_vals_test = mae_intermediate_model.predict(test_x)
-
-    train_x = mae_vals_train
-    test_x = mae_vals_test
+    # train_x = mae_vals_train
+    # test_x = mae_vals_test
 
     model = compile_model(network)
 
@@ -157,12 +163,16 @@ def train_and_score_xgb(network):
         logging.info('%s: %s' % (property, network[property]))
 
 
-    eval_set = [(test_x, test_log_y)]
-    model.fit(train_x, train_log_y, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
-                verbose=False)
+    x_train, x_test, y_train, y_test = train_test_split(train_ae, train_y, test_size=0.15)
 
-    predictions = model.predict(test_x)
-    score = mean_absolute_error(test_log_y, predictions)
+    eval_set = [(x_test, y_test)]
+
+    model.fit(x_train, y_train, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
+                verbose=True)
+
+    predictions = model.predict(test_ae)
+    # inverse_predictions = safe_exp(predictions)
+    score = mean_absolute_error(test_y, predictions)
 
     print('\rResults')
 
@@ -332,3 +342,22 @@ def train_and_score_lgbm(network):
     logging.info('-' * 20)
 
     return score
+
+def train_and_score_xgb_ae():
+    models['log_y'] = xgb.XGBRegressor(nthread=-1, n_estimators=500, max_depth=70, base_score=0.1,
+                                       colsample_bylevel=0.7,
+                                       colsample_bytree=1.0, gamma=0, learning_rate=0.025, min_child_weight=3)
+
+    all_train_y = df_all_train_y.values
+    all_train_log_y = safe_log(all_train_y)
+    all_train_x = df_all_train_x.values
+    all_test_actuals = df_all_test_actuals.values
+    all_test_y = df_all_test_y.values
+    all_test_x = df_all_test_x.values
+    all_test_log_y = safe_log(all_test_y)
+
+    mae_vals_train = keras_models['mae_intermediate_model'].predict(all_train_x)
+    mae_vals_test = keras_models['mae_intermediate_model'].predict(all_test_x)
+    eval_set = [(all_test_x, all_test_y)]
+    models['log_y'].fit(all_train_x, all_train_y, early_stopping_rounds=25, eval_metric='mae', eval_set=eval_set,
+                        verbose=True)
