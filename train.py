@@ -13,10 +13,18 @@ import pandas as pd
 import numpy as np
 
 from keras.models import load_model
-import lightgbm as lgb
+# import lightgbm as lgb
 
 
 import logging
+
+n_thread = 8
+predictor = 'gpu_predictor'
+
+def mae_mape(actual_y, prediction_y):
+    mape = safe_mape(actual_y, prediction_y)
+    mae = mean_absolute_error(actual_y, prediction_y)
+    return mape * mae
 
 def sc_mean_absolute_percentage_error(y_true, y_pred):
     diff = K.abs((y_true - y_pred) / K.clip(K.abs(y_true),
@@ -104,8 +112,9 @@ def compile_model(network):
     booster = network['learning_rate']
     min_child_weight = network['min_child_weight']
 
-    model  = xgb.XGBRegressor(nthread=-1, n_estimators=5000,
-                              tree_method='hist',
+    model  = xgb.XGBRegressor(nthread=n_thread,
+                              predictor = predictor,
+                              n_estimators=5000,
                               # booster=booster,
                               max_depth=max_depth,
                               base_score=base_score,
@@ -124,6 +133,9 @@ def train_and_score_xgb(network):
         network (dict): the parameters of the network
 
     """
+
+    print('Loading data files')
+    logging.info('Loading data files')
 
     df_all_train_x = pd.read_pickle('data/df_all_train_x.pkl.gz', compression='gzip')
     ae_all_train_x = pd.read_pickle('data/ae_train_x.pkl.gz', compression='gzip')
@@ -146,13 +158,18 @@ def train_and_score_xgb(network):
     test_ae = ae_all_test_x.values
 
     # Use keras model to generate x vals
-    # mae_intermediate_model = load_model('models/keras-mae-intermediate-model.h5')
-    #
-    # mae_vals_train = mae_intermediate_model.predict(train_x)
-    # mae_vals_test = mae_intermediate_model.predict(test_x)
+    print('Loading keras model')
+    logging.info('Loading keras model')
 
-    # train_x = mae_vals_train
-    # test_x = mae_vals_test
+    mae_intermediate_model = load_model('models/keras-mae-intermediate-model.h5')
+
+    print('Transforming train x vals using keras intermedioate model')
+    logging.info('Transforming train x vals using keras intermedioate model')
+    mae_vals_train = mae_intermediate_model.predict(train_x)
+
+    print('Transforming test x vals using keras intermedioate model')
+    logging.info('Transforming test x vals using keras intermedioate model')
+    mae_vals_test = mae_intermediate_model.predict(test_x)
 
     model = compile_model(network)
 
@@ -162,18 +179,25 @@ def train_and_score_xgb(network):
         print(property, ':', network[property])
         logging.info('%s: %s' % (property, network[property]))
 
-
-    x_train, x_test, y_train, y_test = train_test_split(train_ae, train_y, test_size=0.15)
+    print('Splitting training data')
+    logging.info('Splitting training data')
+    x_train, x_test, y_train, y_test = train_test_split(mae_vals_train, train_log_y, test_size=0.15)
 
     eval_set = [(x_test, y_test)]
 
     model.fit(x_train, y_train, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
                 verbose=True)
 
-    predictions = model.predict(test_ae)
-    # inverse_predictions = safe_exp(predictions)
-    score = mean_absolute_error(test_y, predictions)
+    print('Executing predictions')
+    logging.info('Executing predictions')
+    predictions = model.predict(mae_vals_test)
+    inverse_predictions = safe_exp(safe_exp(predictions))
+    mae = mean_absolute_error(test_y, inverse_predictions)
+    mape = safe_mape(test_y, inverse_predictions)
+    maepe = safe_maepe(test_y, inverse_predictions)
+    maemape = mae_mape(test_y, predictions)
 
+    score = maemape
     print('\rResults')
 
     best_round = model.best_iteration
@@ -182,11 +206,17 @@ def train_and_score_xgb(network):
         score = 9999
 
     print('best round:', best_round)
-    print('loss:', score)
+    print('mae:', mae)
+    print('mape:', mape)
+    print('maepe:', maepe)
+    print('mae_mape:', maemape)
     print('-' * 20)
 
     logging.info('best round: %d' % best_round)
-    logging.info('loss: %.4f' % score)
+    logging.info('mae: %.4f' % mae)
+    logging.info('mape: %.4f' % mape)
+    logging.info('maepe: %.4f' % maepe)
+    logging.info('mae_mape: %.4f' % maemape)
     logging.info('-' * 20)
 
     return score
