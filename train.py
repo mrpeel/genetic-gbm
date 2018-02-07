@@ -18,8 +18,31 @@ from keras.models import load_model
 
 import logging
 
+# Define reused data
 n_thread = 8
 predictor = 'gpu_predictor'
+n_estimators = 250
+df_all_train_x = None
+ae_all_train_x = None
+df_all_train_y = None
+df_all_train_actuals = None
+df_all_test_x = None
+ae_all_test_x = None
+df_all_test_y = None
+df_all_test_actuals = None
+mae_intermediate_model = None
+mae_vals_train = None
+mae_vals_test = None
+train_y = None
+train_actuals = None
+train_log_y = None
+train_x = None
+# train_ae = None
+test_actuals = None
+test_y = None
+test_log_y = None
+test_x = None
+# test_ae = None
 
 def mae_mape(actual_y, prediction_y):
     mape = safe_mape(actual_y, prediction_y)
@@ -114,7 +137,7 @@ def compile_model(network):
 
     model  = xgb.XGBRegressor(nthread=n_thread,
                               predictor = predictor,
-                              n_estimators=5000,
+                              n_estimators=n_estimators,
                               # booster=booster,
                               max_depth=max_depth,
                               base_score=base_score,
@@ -134,42 +157,77 @@ def train_and_score_xgb(network):
 
     """
 
-    print('Loading data files')
-    logging.info('Loading data files')
+    global df_all_train_x
+    global ae_all_train_x
+    global df_all_train_y
+    global df_all_train_actuals
+    global df_all_test_x
+    global ae_all_test_x
+    global df_all_test_y
+    global df_all_test_actuals
+    global mae_intermediate_model
+    global mae_vals_train
+    global mae_vals_test
+    global train_y
+    global train_actuals
+    global train_log_y
+    global train_x
+    # global train_ae
+    global test_actuals
+    global test_y
+    global test_log_y
+    global test_x
+    # global test_ae
 
-    df_all_train_x = pd.read_pickle('data/df_all_train_x.pkl.gz', compression='gzip')
-    ae_all_train_x = pd.read_pickle('data/ae_train_x.pkl.gz', compression='gzip')
-    df_all_train_y = pd.read_pickle('data/df_all_train_y.pkl.gz', compression='gzip')
-    df_all_train_actuals = pd.read_pickle('data/df_all_train_actuals.pkl.gz', compression='gzip')
-    df_all_test_x = pd.read_pickle('data/df_all_test_x.pkl.gz', compression='gzip')
-    ae_all_test_x = pd.read_pickle('data/ae_test_x.pkl.gz', compression='gzip')
-    df_all_test_y = pd.read_pickle('data/df_all_test_y.pkl.gz', compression='gzip')
-    df_all_test_actuals = pd.read_pickle('data/df_all_test_actuals.pkl.gz', compression='gzip')
+    if df_all_train_x is not None:
+        print('Data files previously loaded')
+        logging.info('Data files previously loaded')
+    else:
+        print('Loading data files')
+        logging.info('Loading data files')
 
-    train_y = df_all_train_y[0].values
-    train_actuals = df_all_train_actuals[0].values
-    train_log_y = safe_log(train_y)
-    train_x = df_all_train_x.values
-    train_ae = ae_all_train_x.values
-    test_actuals = df_all_test_actuals.values
-    test_y = df_all_test_y[0].values
-    test_log_y = safe_log(test_y)
-    test_x = df_all_test_x.values
-    test_ae = ae_all_test_x.values
+        df_all_train_x = pd.read_pickle('data/df_all_train_x.pkl.gz', compression='gzip')
+        # ae_all_train_x = pd.read_pickle('data/ae_train_x.pkl.gz', compression='gzip')
+        df_all_train_y = pd.read_pickle('data/df_all_train_y.pkl.gz', compression='gzip')
+        df_all_train_actuals = pd.read_pickle('data/df_all_train_actuals.pkl.gz', compression='gzip')
+        df_all_test_x = pd.read_pickle('data/df_all_test_x.pkl.gz', compression='gzip')
+        # ae_all_test_x = pd.read_pickle('data/ae_test_x.pkl.gz', compression='gzip')
+        df_all_test_y = pd.read_pickle('data/df_all_test_y.pkl.gz', compression='gzip')
+        df_all_test_actuals = pd.read_pickle('data/df_all_test_actuals.pkl.gz', compression='gzip')
 
-    # Use keras model to generate x vals
-    print('Loading keras model')
-    logging.info('Loading keras model')
+        train_y = df_all_train_y[0].values
+        train_actuals = df_all_train_actuals[0].values
+        train_log_y = safe_log(train_y)
+        train_x = df_all_train_x.values
+        # train_ae = ae_all_train_x.values
+        test_actuals = df_all_test_actuals.values
+        test_y = df_all_test_y[0].values
+        test_log_y = safe_log(test_y)
+        test_x = df_all_test_x.values
+        # test_ae = ae_all_test_x.values
 
-    mae_intermediate_model = load_model('models/keras-mae-intermediate-model.h5')
 
-    print('Transforming train x vals using keras intermedioate model')
-    logging.info('Transforming train x vals using keras intermedioate model')
-    mae_vals_train = mae_intermediate_model.predict(train_x)
+    if mae_intermediate_model is not None:
+        print('Using previously loaded keras model')
+        logging.info('Using previously loaded keras model')
+    else:
+        # Use keras model to generate x vals
+        print('Loading keras model')
+        logging.info('Loading keras model')
 
-    print('Transforming test x vals using keras intermedioate model')
-    logging.info('Transforming test x vals using keras intermedioate model')
-    mae_vals_test = mae_intermediate_model.predict(test_x)
+        mae_intermediate_model = load_model('models/keras-mae-intermediate-model.h5')
+
+    if mae_vals_train is not None:
+        print('Using previously transformed train and test x vals (keras intermediate model)')
+        logging.info('Using previously transformed train and test x vals (keras intermediate model)')
+    else:
+        print('Transforming train x vals using keras intermediate model')
+        logging.info('Transforming train x vals using keras intermediate model')
+        mae_vals_train = mae_intermediate_model.predict(train_x)
+
+        print('Transforming test x vals using keras intermediate model')
+        logging.info('Transforming test x vals using keras intermediate model')
+        mae_vals_test = mae_intermediate_model.predict(test_x)
 
     model = compile_model(network)
 
@@ -192,10 +250,10 @@ def train_and_score_xgb(network):
     logging.info('Executing predictions')
     predictions = model.predict(mae_vals_test)
     inverse_predictions = safe_exp(safe_exp(predictions))
-    mae = mean_absolute_error(test_y, inverse_predictions)
-    mape = safe_mape(test_y, inverse_predictions)
-    maepe = safe_maepe(test_y, inverse_predictions)
-    maemape = mae_mape(test_y, predictions)
+    mae = mean_absolute_error(test_actuals, inverse_predictions)
+    mape = safe_mape(test_actuals, inverse_predictions)
+    maepe = safe_maepe(test_actuals, inverse_predictions)
+    maemape = mae_mape(test_actuals, predictions)
 
     score = maemape
     print('\rResults')
