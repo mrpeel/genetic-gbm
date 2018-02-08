@@ -20,8 +20,8 @@ import logging
 
 # Define reused data
 n_thread = 8
-predictor = 'gpu_predictor'
-n_estimators = 250
+predictor = 'cpu_predictor'
+n_estimators = 5
 df_all_train_x = None
 ae_all_train_x = None
 df_all_train_y = None
@@ -243,19 +243,32 @@ def train_and_score_xgb(network):
 
     eval_set = [(x_test, y_test)]
 
+    print('Fitting model')
+    logging.info('Fitting model')
     model.fit(x_train, y_train, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
                 verbose=True)
 
     print('Executing predictions')
     logging.info('Executing predictions')
     predictions = model.predict(mae_vals_test)
-    inverse_predictions = safe_exp(safe_exp(predictions))
-    mae = mean_absolute_error(test_actuals, inverse_predictions)
-    mape = safe_mape(test_actuals, inverse_predictions)
-    maepe = safe_maepe(test_actuals, inverse_predictions)
-    maemape = mae_mape(test_actuals, predictions)
 
-    score = maemape
+    print('Inverse transforming predictions')
+    logging.info('Inverse transforming predictions')
+    inverse_predictions = safe_exp(safe_exp(predictions))
+
+    print('Calculating mae')
+    logging.info('Calculating mae')
+    mae = mean_absolute_error(test_actuals, inverse_predictions)
+
+    print('Calculating mape')
+    logging.info('Calculating mape')
+    mape = safe_mape(test_actuals, inverse_predictions)
+
+    print('Calculating mae mape')
+    logging.info('Calculating mae mape')
+    maepe = safe_maepe(test_actuals, inverse_predictions)
+
+    score = maepe
     print('\rResults')
 
     best_round = model.best_iteration
@@ -267,14 +280,12 @@ def train_and_score_xgb(network):
     print('mae:', mae)
     print('mape:', mape)
     print('maepe:', maepe)
-    print('mae_mape:', maemape)
     print('-' * 20)
 
     logging.info('best round: %d' % best_round)
     logging.info('mae: %.4f' % mae)
     logging.info('mape: %.4f' % mape)
     logging.info('maepe: %.4f' % maepe)
-    logging.info('mae_mape: %.4f' % maemape)
     logging.info('-' * 20)
 
     return score
