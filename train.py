@@ -14,6 +14,7 @@ import numpy as np
 
 from keras.models import load_model
 # import lightgbm as lgb
+import joblib
 
 
 import logging
@@ -43,6 +44,24 @@ test_y = None
 test_log_y = None
 test_x = None
 # test_ae = None
+
+def save(object, filename):
+    """Saves a compressed object to disk
+       """
+    # with gzip.open(filename, 'wb') as f:
+    #     f.write(pickle.dumps(object, protocol))
+    joblib.dump(object, filename)
+
+def load(filename):
+    """Loads a compressed object from disk
+    """
+    # with gzip.open(filename, 'rb') as f:
+    #     file_content = f.read()
+    #
+    # object = pickle.loads(file_content)
+    # return object
+    model_object = joblib.load(filename)
+    return model_object
 
 def mae_mape(actual_y, prediction_y):
     mape = safe_mape(actual_y, prediction_y)
@@ -248,9 +267,24 @@ def train_and_score_xgb(network):
     model.fit(x_train, y_train, early_stopping_rounds=5, eval_metric='mae', eval_set=eval_set,
                 verbose=True)
 
+
+    best_round = model.best_iteration
+
+    print('Saving model')
+    logging.info('Saving model')
+    save(model, 'models/temp-xgb.model.gz')
+
+    print('Deleting model')
+    logging.info('Deleting model')
+    del model
+
+    print('Reloading model')
+    logging.info('Reloading model')
+    pred_model = load('models/temp-xgb.model.gz')
+
     print('Executing predictions')
     logging.info('Executing predictions')
-    predictions = model.predict(mae_vals_test)
+    predictions = pred_model.predict(mae_vals_test)
 
     print('Inverse transforming predictions')
     logging.info('Inverse transforming predictions')
@@ -270,8 +304,6 @@ def train_and_score_xgb(network):
 
     score = maepe
     print('\rResults')
-
-    best_round = model.best_iteration
 
     if np.isnan(score):
         score = 9999
